@@ -1,0 +1,110 @@
+[
+  {
+    "id": "sakura",
+    "nameJp": "桜色",
+    "nameEn": "Cherry Blossom",
+    "reading": "Sakura-iro",
+    "hex": "#FEDFE1",
+    "category": "Spring",
+    "description": "The pale pink color of cherry blossoms in full bloom. It symbolizes the arrival of spring and the ephemeral beauty of life in Japanese culture."
+  },
+  {
+    "id": "ruri",
+    "nameJp": "瑠璃色",
+    "nameEn": "Lapis Lazuli",
+    "reading": "Ruri-iro",
+    "hex": "#1E50A2",
+    "category": "Blue",
+    "description": "A deep, vivid blue resembling the precious stone Lapis Lazuli. In Buddhism, it is considered one of the seven treasures and represents purity."
+  },
+  {
+    "id": "akane",
+    "nameJp": "茜色",
+    "nameEn": "Madder Red",
+    "reading": "Akane-iro",
+    "hex": "#B7282E",
+    "category": "Red",
+    "description": "A deep red derived from the madder plant roots. It is famously used to describe the beautiful glowing sky at sunset."
+  },
+  {
+    "id": "yamabuki",
+    "nameJp": "山吹色",
+    "nameEn": "Golden Yellow",
+    "reading": "Yamabuki-iro",
+    "hex": "#F8B500",
+    "category": "Yellow",
+    "description": "A bright, golden yellow named after the Japanese globeflower. Historically, it was also used as a slang term for gold coins (koban)."
+  },
+  {
+    "id": "moegi",
+    "nameJp": "萌黄",
+    "nameEn": "Fresh Onion",
+    "reading": "Moegi",
+    "hex": "#AACF53",
+    "category": "Spring",
+    "description": "A bright yellowish-green representing the color of fresh young sprouts in spring. It signifies youth, energy, and new beginnings."
+  },
+  {
+    "id": "kurenai",
+    "nameJp": "紅",
+    "nameEn": "Crimson",
+    "reading": "Kurenai",
+    "hex": "#CB1B45",
+    "category": "Red",
+    "description": "A vivid red dyed from safflowers. In the Heian period, wearing this color was strictly regulated and allowed only for high-ranking court ladies."
+  },
+  {
+    "id": "asagi",
+    "nameJp": "浅葱色",
+    "nameEn": "Pale Chive",
+    "reading": "Asagi-iro",
+    "hex": "#33A6B8",
+    "category": "Blue",
+    "description": "A pale blue-green color like the leaves of green onions. It was famously worn on the haori (jackets) of the Shinsengumi samurai police force."
+  },
+  {
+    "id": "edoshare",
+    "nameJp": "江戸紫",
+    "nameEn": "Edo Purple",
+    "reading": "Edo-murasaki",
+    "hex": "#745399",
+    "category": "Purple",
+    "description": "A stylish purple beloved by the people of Edo (old Tokyo). It represents the 'Iki' (chic) aesthetic of the Kabuki theater culture."
+  },
+  {
+    "id": "rikyucha",
+    "nameJp": "利休茶",
+    "nameEn": "Rikyu Tea",
+    "reading": "Rikyu-cha",
+    "hex": "#8F8667",
+    "category": "Earth",
+    "description": "A grayish-brown green named after Sen no Rikyu, the greatest tea master. It embodies the concept of 'Wabi-Sabi'—finding beauty in imperfection."
+  },
+  {
+    "id": "gofun",
+    "nameJp": "胡粉",
+    "nameEn": "Oyster White",
+    "reading": "Gofun",
+    "hex": "#FFFFFB",
+    "category": "White",
+    "description": "A warm white pigment made from crushed oyster shells, traditionally used for the skin of Japanese Hina dolls."
+  },
+  {
+    "id": "shikkoku",
+    "nameJp": "漆黒",
+    "nameEn": "Lacquer Black",
+    "reading": "Shikkoku",
+    "hex": "#0D0015",
+    "category": "Black",
+    "description": "A pure, glossy black resembling wet lacquerware. It represents infinite depth and silence."
+  },
+  {
+    "id": "toki",
+    "nameJp": "鴇色",
+    "nameEn": "Ibis Pink",
+    "reading": "Toki-iro",
+    "hex": "#F4B3C2",
+    "category": "Pink",
+    "description": "A soft pinkish-orange, the color of the Japanese Crested Ibis's feathers. A gentle color often seen in kimono patterns."
+  }
+]

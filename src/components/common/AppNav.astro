@@ -1,0 +1,79 @@
+---
+// src/components/common/AppNav.astro
+import Logo from '../AppLogo.astro';
+import DropDownMenu from '../DropDownMenu.astro';
+
+const dropdownItems = [
+    {
+        icon: 'T', // アイコン例
+        label: 'Text Gradient Generator',
+        desc: 'Generate beautiful text gradients',
+        url: '/tools/text-gradient-generator',
+    },
+    {
+        icon: 'B',
+        label: 'Background Generator',
+        desc: 'Generate stunning background gradients',
+        url: '/tools/background-generator',
+    },
+    {
+        icon: 'P',
+        label: 'Color Palette',
+        desc: 'Japanese traditional color palette',
+        url: '/tools/color-palette',
+    },
+    {
+        icon: 'M',
+        label: 'Multi-Color Palette',
+        desc: 'Japanese multi-color palette',
+        url: '/tools/multi-color-palette',
+    },
+    {
+        icon: 'Tw',
+        label: 'Tailwind Palette',
+        desc: 'Tailwind CSS color palettes',
+        url: '/tools/tailwind-color-palette',
+    },
+    {
+        icon: 'S',
+        label: 'Shopify Palette',
+        desc: 'Shopify color palettes',
+        url: '/tools/shopify-color-palette',
+    },
+];
+---
+
+<div class='w-full'>
+    <div class='max-w-7xl mx-auto flex items-center justify-between p-6'>
+        <Logo />
+        <ul class='flex justify-center gap-8 text-sm tracking-widest'>
+            <li><a href='/'>Home</a></li>
+            <li class='relative group'>
+                <button
+                    id='mega-menu-dropdown-button'
+                    class='flex items-center gap-1 hover:text-stone-500 focus:outline-none'
+                >
+                    Tools
+                    <svg
+                        class='w-4 h-4 transition-transform group-hover:rotate-180'
+                        fill='none'
+                        stroke='currentColor'
+                        viewBox='0 0 24 24'
+                        ><path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M19 9l-7 7-7-7'></path></svg
+                    >
+                </button>
+
+                <div class='group-hover:block min-w-80'>
+                    <DropDownMenu items={dropdownItems} />
+                </div>
+            </li>
+        </ul>
+        <div>
+            <a href='/login'>Login</a>
+        </div>
+    </div>
+</div>

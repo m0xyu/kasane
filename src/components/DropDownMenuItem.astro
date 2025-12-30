@@ -1,0 +1,26 @@
+---
+// Define the expected props for the component
+interface Props {
+    icon?: string;
+    label: string;
+    desc: string;
+    url: string;
+}
+
+const { icon = 'icon', label, desc, url } = Astro.props;
+---
+
+<li class='border-b border-dotted border-stone-200 last:border-0'>
+    <a
+        aria-current='page'
+        href={url}
+        class='block p-3 rounded-md text-body hover:bg-stone-300/95 transition-colors duration-300'
+    >
+        <p class='mb-3 font-bold flex items-center gap-2'>
+            <span>{icon}</span>{label}
+        </p>
+        <p class='text-neutral-500 text-xs'>
+            {desc}
+        </p>
+    </a>
+</li>
