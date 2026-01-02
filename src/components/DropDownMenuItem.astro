@@ -16,11 +16,22 @@ const { icon = 'icon', label, desc, url } = Astro.props;
         href={url}
         class='block p-3 rounded-md text-body hover:bg-stone-300/95 transition-colors duration-300'
     >
-        <p class='mb-3 font-bold flex items-center gap-2'>
-            <span>{icon}</span>{label}
-        </p>
-        <p class='text-neutral-500 text-xs'>
-            {desc}
-        </p>
+        <div class='flex items-start gap-3'>
+            <div
+                class='flex-shrink-0 w-6 h-6 bg-stone-200 rounded-full flex items-center justify-center text-xs text-stone-500'
+            >
+                {icon === 'icon' ? '✦' : icon}
+            </div>
+            <div>
+                <p
+                    class='text-sm font-bold text-slate-800 group-hover/item:text-slate-600 mb-0.5'
+                >
+                    {label}
+                </p>
+                <p class='text-xs text-stone-500 leading-tight'>
+                    {desc}
+                </p>
+            </div>
+        </div>
     </a>
 </li>
