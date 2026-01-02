@@ -1,0 +1,89 @@
+---
+// src/components/ColorCard.astro
+const { color } = Astro.props;
+---
+
+{/* Color Preview Area */}
+<button
+    class='copy-trigger h-40 w-full relative transition-transform duration-700 group-hover:scale-105'
+    style={`background-color: ${color.hex};`}
+    data-hex={color.hex}
+    aria-label={`Copy color code ${color.hex}`}
+>
+    {/* Overlay on Hover */}
+    <div
+        class='absolute inset-0 opacity-0 group-hover:opacity-100 bg-black/10 transition-opacity duration-300 flex items-center justify-center cursor-pointer'
+    >
+        <span
+            class='copy-text bg-white/90 px-3 py-1 text-xs font-mono tracking-wider text-slate-800 shadow-sm cursor-pointer'
+        >
+            {color.hex}
+        </span>
+    </div>
+</button>
+
+{/* Content Area */}
+<div class='p-5'>
+    <div class='flex justify-between items-start mb-2'>
+        <div>
+            <p class='text-xs text-stone-400 uppercase tracking-widest mb-1'>
+                {color.reading}
+            </p>
+            <h2 class='text-2xl font-bold text-slate-800'>
+                {color.nameJp}
+            </h2>
+        </div>
+        <div
+            class='writing-vertical-rl text-[10px] text-stone-300 tracking-widest h-12 uppercase leading-none opacity-50'
+        >
+            {color.nameEn}
+        </div>
+    </div>
+
+    <p
+        class='text-xs text-stone-500 leading-relaxed line-clamp-3 mt-3 border-t border-stone-100 pt-3'
+    >
+        {color.description}
+    </p>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll<HTMLElement>('.copy-trigger');
+    buttons.forEach((button) => {
+        button.addEventListener('click', async () => {
+            const hex = button.dataset.hex;
+            const textSpan = button.querySelector('.copy-text');
+            const originalText = hex;
+            if (!hex) return;
+
+            try {
+                await navigator.clipboard.writeText(hex);
+                if (textSpan) {
+                    textSpan.textContent = 'Copied!';
+                    setTimeout(() => {
+                        if (originalText) textSpan.textContent = originalText;
+                    }, 2000);
+                }
+                window.dispatchEvent(
+                    new CustomEvent('toast', {
+                        detail: {
+                            message: `Copied ${hex} to clipboard!`,
+                            type: 'success',
+                        },
+                    })
+                );
+                console.log('Copied: ', hex);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                window.dispatchEvent(
+                    new CustomEvent('toast', {
+                        detail: {
+                            message: 'Failed to copy',
+                            type: 'error',
+                        },
+                    })
+                );
+            }
+        });
+    });
+</script>
