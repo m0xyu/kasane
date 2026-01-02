@@ -1,13 +1,12 @@
 ---
-// Define the expected props for the component
 interface Props {
-    icon?: string;
+    icon: any;
     label: string;
     desc: string;
     url: string;
 }
 
-const { icon = 'icon', label, desc, url } = Astro.props;
+const { icon: Icon, label, desc, url } = Astro.props;
 ---
 
 <li class='border-b border-dotted border-stone-200 last:border-0'>
@@ -18,9 +17,9 @@ const { icon = 'icon', label, desc, url } = Astro.props;
     >
         <div class='flex items-start gap-3'>
             <div
-                class='flex-shrink-0 w-6 h-6 bg-stone-200 rounded-full flex items-center justify-center text-xs text-stone-500'
+                class='flex-shrink-0 w-8 h-8 bg-stone-200 group-hover/item:bg-white group-hover/item:shadow-sm transition-all rounded-full flex items-center justify-center text-stone-500 group-hover/item:text-slate-800'
             >
-                {icon === 'icon' ? '✦' : icon}
+                <Icon className='w-4 h-4' />
             </div>
             <div>
                 <p

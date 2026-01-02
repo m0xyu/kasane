@@ -3,39 +3,48 @@
 import Logo from '../AppLogo.astro';
 import DropDownMenu from '../DropDownMenu.astro';
 
+import {
+    Type, // Text Gradient 用
+    Image, // Background 用
+    Palette, // Palette 用
+    Layers, // Multi-Color 用
+    Wind, // Tailwind 用
+    ShoppingBag,
+} from 'lucide-react';
+
 const dropdownItems = [
     {
-        icon: 'T', // アイコン例
+        icon: Type, // アイコン例
         label: 'Text Gradient Generator',
         desc: 'Generate beautiful text gradients',
         url: '/tools/text-gradient-generator',
     },
     {
-        icon: 'B',
+        icon: Image,
         label: 'Background Generator',
         desc: 'Generate stunning background gradients',
         url: '/tools/background-generator',
     },
     {
-        icon: 'P',
+        icon: Palette,
         label: 'Color Palette',
         desc: 'Japanese traditional color palette',
         url: '/tools/color-palette',
     },
     {
-        icon: 'M',
+        icon: Layers,
         label: 'Multi-Color Palette',
         desc: 'Japanese multi-color palette',
         url: '/tools/multi-color-palette',
     },
     {
-        icon: 'Tw',
+        icon: Wind,
         label: 'Tailwind Palette',
         desc: 'Tailwind CSS color palettes',
         url: '/tools/tailwind-color-palette',
     },
     {
-        icon: 'S',
+        icon: ShoppingBag,
         label: 'Shopify Palette',
         desc: 'Shopify color palettes',
         url: '/tools/shopify-color-palette',
@@ -123,8 +132,8 @@ const dropdownItems = [
                                 href={item.url}
                                 class='flex py-2 text-slate-700 hover:text-slate-900 items-center gap-3'
                             >
-                                <span class='w-6 h-6 bg-stone-100 rounded-full flex items-center justify-center text-xs'>
-                                    {item.icon}
+                                <span class='w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center text-xs'>
+                                    <item.icon className='w-4 h-4' />
                                 </span>
                                 {item.label}
                             </a>
