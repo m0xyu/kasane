@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Index from '../../components/tools/WagaraGenerator/index';
+import Header from '../../components/common/Header.astro';
+---
+
+<Layout
+    title='Wagara Generator - KASANE - 襲'
+    description='Create custom Japanese traditional patterns (Wagara) for your web projects. Customize colors, scale, and opacity to generate seamless SVG backgrounds.'
+>
+    <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
+        <Header
+            mainTitle='Wagara Pattern Generator'
+            subTitle='Customize traditional Japanese patterns with modern colors.<br/>Create seamless SVG backgrounds for your websites and applications.'
+        />
+        <Index client:load />
+        <section
+            class='max-w-5xl mx-auto pb-16 md:pt-28 max-md:pt-16 px-4 md:px-8 text-stone-600 leading-relaxed'
+        >
+            <div class='text-center mb-16 max-w-3xl mx-auto'>
+                <h2
+                    class='text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight'
+                >
+                    About the Tool
+                </h2>
+                <p class='text-lg text-stone-500'>
+                    Bring the timeless beauty of Japanese aesthetics to your
+                    modern web projects. This tool generates mathematically
+                    perfect, seamless SVG patterns based on traditional designs
+                    (Wagara). It serves as a digital textile factory, allowing
+                    you to weave history into your user interfaces.
+                </p>
+            </div>
+
+            <div class='grid md:grid-cols-2 gap-12 mb-16'>
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Core Capabilities
+                    </h3>
+                    <ul class='space-y-4'>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Seamless SVG Generation</strong
+                                >
+                                Generates lightweight, infinitely scalable SVG codes
+                                that loop perfectly without any visible seams.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Full Customization</strong
+                                >
+                                Adjust the pattern scale and opacity to create subtle
+                                textures or bold backgrounds. Control both pattern
+                                and background colors.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Multi-Format Export</strong
+                                >
+                                Copy CSS directly for web use, or download as .svg/.png
+                                files for use in design tools like Figma or Illustrator.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Curated Patterns</strong
+                                >
+                                Select from iconic patterns like Seigaiha (Waves)
+                                and Asanoha (Hemp leaf), each carrying its own auspicious
+                                meaning.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* --- Workflow --- */}
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Workflow
+                    </h3>
+                    <ol
+                        class='space-y-5 relative pl-2 border-l-2 border-stone-200 ml-2'
+                    >
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-slate-800 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >01. Select</strong
+                            >
+                            <p>
+                                Choose a base pattern from the sidebar. Each
+                                pattern represents a unique aspect of Japanese
+                                nature or culture.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >02. Colorize</strong
+                            >
+                            <p>
+                                Apply your palette. Use KASANE colors for an
+                                authentic look, or mix modern hues for a fresh
+                                take.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >03. Refine</strong
+                            >
+                            <p>
+                                Adjust the 'Scale' and 'Opacity' sliders. Lower
+                                opacity works great for subtle website
+                                backgrounds.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >04. Export</strong
+                            >
+                            <p>
+                                Click 'Copy CSS' for instant code, or download
+                                the asset to use in your graphic design
+                                software.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div
+                class='bg-stone-50 border border-stone-100 rounded-xl p-8 text-center md:text-left md:flex items-center gap-8'
+            >
+                <div class='shrink-0 mb-4 md:mb-0'>
+                    <h3
+                        class='text-lg font-bold text-slate-800 uppercase tracking-widest'
+                    >
+                        Our Focus
+                    </h3>
+                </div>
+                <div
+                    class='h-px w-full bg-stone-200 md:w-px md:h-16 md:bg-stone-200 shrink-0 hidden md:block'
+                >
+                </div>
+                <p class='text-sm md:text-base text-stone-600 italic'>
+                    "Digital texture with meaning. In a world of flat design, we
+                    believe in adding depth and story. This tool helps you dress
+                    your digital content in the elegance of traditional Japanese
+                    textiles."
+                </p>
+            </div>
+        </section>
+    </main>
+</Layout>
