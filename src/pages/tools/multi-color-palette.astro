@@ -1,22 +1,21 @@
 ---
-// src/pages/tools/text-gradient-generator.astro
+// src/pages/tools/multi-color-palette.astro
 
 import Layout from '../../layouts/Layout.astro';
-import Index from '../../components/tools/TextGradientGenerator/index';
+import Index from '../../components/tools/MultiColorPalette/index';
 import Header from '../../components/common/Header.astro';
 ---
 
 <Layout
-    title='Text Gradient Generator - KASANE - 襲'
-    description='Create stunning text gradients with ease using our Text Gradient Generator tool. Customize colors, directions, and preview your designs in real-time!'
+    title='Multi Color Palette - KASANE - 襲'
+    description='Effortlessly create harmonious color palettes with our Multi Color Palette Generator. Lock colors, randomize combinations, and export code for your design projects.'
 >
     <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
         <Header
-            mainTitle='Text Gradient Generator'
-            subTitle='Create stunning text gradients with ease using our Text Gradient<br/>Generator tool. Customize colors, directions, and preview your designs in real-time!'
+            mainTitle='Multi Color Palette'
+            subTitle='Instantly generate beautiful color schemes for your projects.<br/>Lock your favorite colors, randomize the rest, and discover the perfect harmony with ease.'
         />
         <Index client:load />
-
         <section
             class='max-w-5xl mx-auto py-16 px-4 md:px-8 text-stone-600 leading-relaxed'
         >
@@ -28,11 +27,11 @@ import Header from '../../components/common/Header.astro';
                     About the Tool
                 </h2>
                 <p class='text-lg text-stone-500'>
-                    Craft stunning typography with our specialized Text Gradient
-                    Generator. From subtle linear fades to dynamic conic
-                    effects, this tool offers precise control over colors and
-                    angles. With built-in Tailwind CSS support, it's designed to
-                    streamline your modern web development workflow.
+                    Discover the perfect color combinations with our Multi Color
+                    Palette Generator. Designed for intuition and speed, this
+                    tool allows you to generate harmonious schemes instantly.
+                    Whether you are a designer looking for inspiration or a
+                    developer needing quick hex codes, we've got you covered.
                 </p>
             </div>
 
@@ -50,10 +49,10 @@ import Header from '../../components/common/Header.astro';
                             <span>
                                 <strong
                                     class='text-slate-800 block text-sm mb-0.5'
-                                    >3 Gradient Modes</strong
+                                    >Smart Randomization</strong
                                 >
-                                Full support for Linear, Radial, and Conic gradients
-                                to match any design style.
+                                Instantly generate 5 harmonious colors. Use the Spacebar
+                                for rapid iteration.
                             </span>
                         </li>
                         <li class='flex gap-3 items-start'>
@@ -61,10 +60,10 @@ import Header from '../../components/common/Header.astro';
                             <span>
                                 <strong
                                     class='text-slate-800 block text-sm mb-0.5'
-                                    >Dynamic Color Palette</strong
+                                    >Lock & Refine</strong
                                 >
-                                Add up to 5 colors, remove them, or rearrange stops
-                                to create the perfect blend.
+                                Found a color you love? Lock it, and randomize the
+                                rest to find matching hues.
                             </span>
                         </li>
                         <li class='flex gap-3 items-start'>
@@ -72,10 +71,10 @@ import Header from '../../components/common/Header.astro';
                             <span>
                                 <strong
                                     class='text-slate-800 block text-sm mb-0.5'
-                                    >Live Preview with Context</strong
+                                    >Accessibility First</strong
                                 >
-                                Type your own text and toggle background colors (White/Washi/Dark)
-                                to check contrast.
+                                Text colors (black/white) automatically adjust based
+                                on background brightness for readability.
                             </span>
                         </li>
                         <li class='flex gap-3 items-start'>
@@ -83,10 +82,10 @@ import Header from '../../components/common/Header.astro';
                             <span>
                                 <strong
                                     class='text-slate-800 block text-sm mb-0.5'
-                                    >Tailwind & CSS Export</strong
+                                    >Easy Management</strong
                                 >
-                                One-click copy for both standard CSS and optimized
-                                Tailwind utility classes.
+                                Add up to 10 colors, remove unwanted ones, and copy
+                                Hex codes with a single click.
                             </span>
                         </li>
                     </ul>
@@ -108,11 +107,11 @@ import Header from '../../components/common/Header.astro';
                             ></span>
                             <strong
                                 class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
-                                >01. Inspire</strong
+                                >01. Generate</strong
                             >
                             <p>
-                                Hit the 'Random' button to instantly generate
-                                unique color combinations and angles.
+                                Press the <strong>Spacebar</strong> or click 'Generate'
+                                to start exploring color possibilities.
                             </p>
                         </li>
                         <li class='pl-6 relative'>
@@ -121,11 +120,12 @@ import Header from '../../components/common/Header.astro';
                             ></span>
                             <strong
                                 class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
-                                >02. Customize</strong
+                                >02. Lock</strong
                             >
                             <p>
-                                Add new colors (up to 5), tweak hex codes, and
-                                adjust the gradient direction.
+                                Click the 'Lock' icon on colors you want to
+                                keep. Locked colors won't change on next
+                                generation.
                             </p>
                         </li>
                         <li class='pl-6 relative'>
@@ -134,11 +134,11 @@ import Header from '../../components/common/Header.astro';
                             ></span>
                             <strong
                                 class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
-                                >03. Preview</strong
+                                >03. Fine-tune</strong
                             >
                             <p>
-                                Edit the preview text and switch backgrounds to
-                                ensure readability.
+                                Need a specific shade? Use the 'Edit' button to
+                                manually adjust any color using the picker.
                             </p>
                         </li>
                         <li class='pl-6 relative'>
@@ -147,18 +147,18 @@ import Header from '../../components/common/Header.astro';
                             ></span>
                             <strong
                                 class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
-                                >04. Export</strong
+                                >04. Collect</strong
                             >
                             <p>
-                                Copy the generated code. Use 'Copy Tailwind
-                                Class' for instant JIT compatibility.
+                                Click the Hex code to copy it to your clipboard
+                                and use it in your design tool or code editor.
                             </p>
                         </li>
                     </ol>
                 </div>
             </div>
 
-            {/* --- Our Philosophy --- */}
+            {/* --- Our Focus --- */}
             <div
                 class='bg-stone-50 border border-stone-100 rounded-xl p-8 text-center md:text-left md:flex items-center gap-8'
             >
@@ -174,10 +174,9 @@ import Header from '../../components/common/Header.astro';
                 >
                 </div>
                 <p class='text-sm md:text-base text-stone-600 italic'>
-                    "Simplicity meets functionality. We designed this generator
-                    to handle the complexities of CSS syntax—especially
-                    arbitrary values in Tailwind—so you can focus purely on
-                    creating beautiful typography."
+                    "Serendipity in design. We believe the best color palettes
+                    often come from happy accidents. This tool facilitates that
+                    discovery process by balancing randomness with control."
                 </p>
             </div>
         </section>
