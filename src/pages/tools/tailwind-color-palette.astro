@@ -1,0 +1,187 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Index from '../../components/tools/TailwindPalette/index';
+import Header from '../../components/common/Header.astro';
+---
+
+<Layout
+    title='Tailwind Palette Generator - KASANE - 襲'
+    description='Generate a complete Tailwind CSS color palette (50-950) from a single Japanese traditional color. Preview on UI components and export configuration code instantly.'
+>
+    <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
+        <Header
+            mainTitle='Tailwind Palette Generator'
+            subTitle='Bridge tradition and utility.<br/>Generate a full Tailwind CSS color scale from any traditional Japanese color.'
+            isDescription={true}
+        />
+        <Index client:load />
+
+        <section
+            class='max-w-5xl mx-auto py-16 px-4 md:px-8 text-stone-600 leading-relaxed'
+        >
+            <div class='text-center mb-16 max-w-3xl mx-auto'>
+                <h2
+                    class='text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight'
+                >
+                    About the Tool
+                </h2>
+                <p class='text-lg text-stone-500'>
+                    This tool bridges the gap between traditional aesthetics and
+                    modern development workflows. By calculating scientifically
+                    balanced shades (50-950) based on your chosen color, it
+                    allows you to immediately use "Kasane" colors in your
+                    Tailwind CSS projects without manual tweaking.
+                </p>
+            </div>
+
+            <div class='grid md:grid-cols-2 gap-12 mb-16'>
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Core Capabilities
+                    </h3>
+                    <ul class='space-y-4'>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >LCH-based Scaling</strong
+                                >
+                                Uses the LCH (Lightness, Chroma, Hue) color space
+                                to generate smooth, perceptually uniform gradients
+                                that remain vibrant even in lighter shades.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Instant Config Export</strong
+                                >
+                                Generates a ready-to-paste `theme.extend.colors` object
+                                for your `tailwind.config.js`, saving you from tedious
+                                formatting.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Traditional Inspiration</strong
+                                >
+                                Randomly suggests authentic Japanese colors (Traditional
+                                Colors) to help you break away from standard color
+                                schemes.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Real-time UI Preview</strong
+                                >
+                                Visualize how your generated palette looks on buttons,
+                                cards, and alerts instantly before copying the code.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Workflow
+                    </h3>
+                    <ol
+                        class='space-y-5 relative pl-2 border-l-2 border-stone-200 ml-2'
+                    >
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-slate-800 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >01. Pick a Color</strong
+                            >
+                            <p>
+                                Choose a base color using the picker, enter a
+                                hex code, or click a random traditional color
+                                preset.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >02. Name It</strong
+                            >
+                            <p>
+                                Define a variable name (e.g., 'primary',
+                                'sakura'). This will be the class name prefix in
+                                your code (e.g., `bg-sakura-500`).
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >03. Verify</strong
+                            >
+                            <p>
+                                Check the "Generated Scale" and "Component
+                                Preview" to ensure the contrast and vibe match
+                                your needs.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >04. Copy & Paste</strong
+                            >
+                            <p>
+                                Click "Copy" on the code block and paste it
+                                directly into your project's
+                                `tailwind.config.js`.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div
+                class='bg-stone-50 border border-stone-100 rounded-xl p-8 text-center md:text-left md:flex items-center gap-8'
+            >
+                <div class='shrink-0 mb-4 md:mb-0'>
+                    <h3
+                        class='text-lg font-bold text-slate-800 uppercase tracking-widest'
+                    >
+                        Our Focus
+                    </h3>
+                </div>
+                <div
+                    class='h-px w-full bg-stone-200 md:w-px md:h-16 md:bg-stone-200 shrink-0 hidden md:block'
+                >
+                </div>
+                <p class='text-sm md:text-base text-stone-600 italic'>
+                    "Utility meets Tradition. We use the LCH color space to
+                    generate gradients that remain vibrant and natural, ensuring
+                    your UI looks professional while retaining the soul of
+                    Japanese colors."
+                </p>
+            </div>
+        </section>
+    </main>
+</Layout>
