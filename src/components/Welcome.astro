@@ -1,4 +1,5 @@
 ---
+import { ArrowRightIcon } from 'lucide-react';
 import colors from '../data/colors.json';
 import type { TraditionalColor } from '../types/color';
 import ColorCard from './ColorCard.astro';
@@ -15,6 +16,37 @@ const colorList: TraditionalColor[] = colors;
 
 <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
     <Header mainTitle='KASANE' subTitle='Japanese Traditional Color Palette' />
+    <a
+        href='/tools/text-gradient-generator'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-10 md:p-14 mb-16 text-center shadow-sm hover:shadow-md hover:border-pink-200/50 transition-all duration-500 ease-out'
+    >
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top_left,#FEDFE1_0%,transparent_50%),radial-gradient(circle_at_bottom_right,#F8B50020_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-3xl md:text-5xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#DC9FB4,#F8B500)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    言葉を彩る、<br class='md:hidden' />あなただけの色合わせ。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-base md:text-lg flex flex-col md:flex-row items-center justify-center gap-2 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'>
+                        Text Gradient Generator</strong
+                    > — Create stunning typography
+                </span>
+                <ArrowRightIcon
+                    className='w-5 h-5 transition-transform group-hover:translate-x-1'
+                />
+            </p>
+        </div>
+    </a>
     <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
             colorList.map((color) => (
