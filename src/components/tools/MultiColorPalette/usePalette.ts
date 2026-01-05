@@ -61,6 +61,15 @@ export const usePalette = () => {
         });
     }, []);
 
+    const setPaletteColors = useCallback((newHexColors: string[]) => {
+        const newPalette = newHexColors.map((hex) => ({
+            id: uuidv4(),
+            hex: hex.toUpperCase(),
+            isLocked: false, // プリセット適用時はロックを解除するのが一般的
+        }));
+        setColors(newPalette);
+    }, []);
+
     return {
         colors,
         generatePalette,
@@ -68,5 +77,6 @@ export const usePalette = () => {
         toggleLock,
         removeColor,
         addColor,
+        setPaletteColors,
     };
 };

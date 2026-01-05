@@ -16,37 +16,80 @@ const colorList: TraditionalColor[] = colors;
 
 <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
     <Header mainTitle='KASANE' subTitle='Japanese Traditional Color Palette' />
-    <a
-        href='/tools/text-gradient-generator'
-        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-10 md:p-14 mb-16 text-center shadow-sm hover:shadow-md hover:border-pink-200/50 transition-all duration-500 ease-out'
-    >
-        <div
-            class='absolute inset-0 bg-[radial-gradient(circle_at_top_left,#FEDFE1_0%,transparent_50%),radial-gradient(circle_at_bottom_right,#F8B50020_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
-        >
-        </div>
 
-        <div class='relative z-10 space-y-4'>
-            <h2 class='text-3xl md:text-5xl font-bold tracking-tight'>
-                <span
-                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#DC9FB4,#F8B500)] group-hover:saturate-[1.2] transition-all duration-500 filter'
-                >
-                    言葉を彩る、<br class='md:hidden' />あなただけの色合わせ。
-                </span>
-            </h2>
-            <p
-                class='text-stone-500 font-medium text-base md:text-lg flex flex-col md:flex-row items-center justify-center gap-2 group-hover:text-stone-800 transition-colors'
+    <div class='grid md:grid-cols-2 gap-6 mb-16'>
+        <a
+            href='/tools/text-gradient-generator'
+            class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 md:p-10 text-center shadow-sm hover:shadow-md hover:border-pink-200/50 transition-all duration-500 ease-out'
+        >
+            <div
+                class='absolute inset-0 bg-[radial-gradient(circle_at_top_left,#FEDFE1_0%,transparent_50%),radial-gradient(circle_at_bottom_right,#F8B50020_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
             >
-                <span>
-                    <strong class='text-stone-600'>
-                        Text Gradient Generator</strong
-                    > — Create stunning typography
-                </span>
-                <ArrowRightIcon
-                    className='w-5 h-5 transition-transform group-hover:translate-x-1'
-                />
-            </p>
-        </div>
-    </a>
+            </div>
+
+            <div class='relative z-10 space-y-4'>
+                <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                    <span
+                        class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#DC9FB4,#F8B500)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                    >
+                        言葉を彩る、<br />あなただけの色合わせ。
+                    </span>
+                </h2>
+                <p
+                    class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+                >
+                    <span>
+                        <strong class='text-stone-600'
+                            >Text Gradient Generator</strong
+                        >
+                    </span>
+                    <span class='flex items-center gap-1 opacity-70'>
+                        Create stunning typography
+                        <ArrowRightIcon
+                            className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                        />
+                    </span>
+                </p>
+            </div>
+        </a>
+
+        <a
+            href='/tools/multi-color-palette'
+            class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 md:p-10 text-center shadow-sm hover:shadow-md hover:border-blue-200/50 transition-all duration-500 ease-out'
+        >
+            {/* Background: Cool Tones (Purple/Blue for Harmony) */}
+            <div
+                class='absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E0EBDF_0%,transparent_50%),radial-gradient(circle_at_bottom_left,#A5DEE420_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+            >
+            </div>
+
+            <div class='relative z-10 space-y-4'>
+                <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                    <span
+                        class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#89729E,#86C166)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                    >
+                        季節を重ねる、<br />調和のパレット。
+                    </span>
+                </h2>
+                <p
+                    class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+                >
+                    <span>
+                        <strong class='text-stone-600'
+                            >Multi Color Palette</strong
+                        >
+                    </span>
+                    <span class='flex items-center gap-1 opacity-70'>
+                        Generate harmonious schemes
+                        <ArrowRightIcon
+                            className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                        />
+                    </span>
+                </p>
+            </div>
+        </a>
+    </div>
+
     <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
             colorList.map((color) => (
