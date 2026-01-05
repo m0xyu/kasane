@@ -28,6 +28,15 @@ export const SettingsPanel = ({
         await navigator.clipboard.writeText(css);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+
+        window.dispatchEvent(
+            new CustomEvent('toast', {
+                detail: {
+                    message: 'CSS code copied to clipboard!',
+                    type: 'success',
+                },
+            })
+        );
     };
 
     const copyTailwindCSS = async () => {
@@ -39,6 +48,15 @@ export const SettingsPanel = ({
 
         setCopiedTailwind(true);
         setTimeout(() => setCopiedTailwind(false), 2000);
+
+        window.dispatchEvent(
+            new CustomEvent('toast', {
+                detail: {
+                    message: 'Tailwind CSS class copied to clipboard!',
+                    type: 'success',
+                },
+            })
+        );
     };
 
     return (

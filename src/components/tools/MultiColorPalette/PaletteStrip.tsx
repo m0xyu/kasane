@@ -32,6 +32,15 @@ export const PaletteStrip = memo(
             await navigator.clipboard.writeText(color.hex);
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
+
+            window.dispatchEvent(
+                new CustomEvent('toast', {
+                    detail: {
+                        message: `Copied ${color.hex} to clipboard!`,
+                        type: 'success',
+                    },
+                })
+            );
         };
 
         return (

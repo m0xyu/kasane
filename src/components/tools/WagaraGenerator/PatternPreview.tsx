@@ -22,6 +22,15 @@ export const PatternPreview = ({
         await navigator.clipboard.writeText(cssCode);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+
+        window.dispatchEvent(
+            new CustomEvent('toast', {
+                detail: {
+                    message: 'CSS code copied to clipboard!',
+                    type: 'success',
+                },
+            })
+        );
     };
 
     const getRawSvgData = () => {
