@@ -1,0 +1,20 @@
+---
+// src/pages/tools/wagara-generator.astro
+
+import Layout from '../../layouts/Layout.astro';
+import Index from '../../components/tools/WagaraGenerator/index';
+import Header from '../../components/common/Header.astro';
+---
+
+<Layout
+    title='Wagara Generator - KASANE - 襲'
+    description='Effortlessly create harmonious color palettes with our Multi Color Palette Generator. Lock colors, randomize combinations, and export code for your design projects.'
+>
+    <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
+        <Header
+            mainTitle='Multi Color Palette'
+            subTitle='Instantly generate beautiful color schemes for your projects.<br/>Lock your favorite colors, randomize the rest, and discover the perfect harmony with ease.'
+        />
+        <Index client:load />
+    </main>
+</Layout>
