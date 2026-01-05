@@ -15,23 +15,29 @@ export const useTextGradient = () => {
 
     // React Compilerを使用せずに手動で実装
     // directionType, direction, colorsが変わったらgradientStringを再計算
+    // generateGradientStringが無駄に呼ばれないようにする
     const gradientString = useMemo(
         () => generateGradientString(directionType, direction, colors),
         [directionType, direction, colors]
     );
 
     const addColor = useCallback(() => {
-        if (colors.length >= 5) return;
-        setColors((prev) => [...prev, '#000000']);
-    }, [colors]);
+        setColors((prev) => {
+            if (prev.length >= 5) {
+                return prev;
+            }
+            return [...prev, '#000000'];
+        });
+    }, []);
 
-    const removeColor = useCallback(
-        (index: number) => {
-            if (colors.length <= 2) return;
-            setColors((prev) => prev.filter((_, i) => i !== index));
-        },
-        [colors]
-    );
+    const removeColor = useCallback((index: number) => {
+        setColors((prev) => {
+            if (prev.length <= 2) {
+                return prev;
+            }
+            return prev.filter((_, i) => i !== index);
+        });
+    }, []);
 
     const updateColor = useCallback((index: number, newColor: string) => {
         setColors((prev) => {
