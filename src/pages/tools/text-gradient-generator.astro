@@ -3,10 +3,183 @@
 
 import Layout from '../../layouts/Layout.astro';
 import Index from '../../components/tools/TextGradientGenerator/index';
+import Header from '../../components/common/Header.astro';
 ---
 
-<Layout>
-    <h1>Text Gradient Generator</h1>
-    <p></p>
-    <Index client:load />
+<Layout
+    title='Text Gradient Generator - KASANE - 襲'
+    description='Create stunning text gradients with ease using our Text Gradient Generator tool. Customize colors, directions, and preview your designs in real-time!'
+>
+    <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
+        <Header
+            mainTitle='Text Gradient Generator'
+            subTitle='Create stunning text gradients with ease using our Text Gradient<br/>Generator tool. Customize colors, directions, and preview your designs in real-time!'
+        />
+        <Index client:load />
+
+        <section
+            class='max-w-5xl mx-auto py-16 px-4 md:px-8 text-stone-600 leading-relaxed'
+        >
+            {/* --- Introduction --- */}
+            <div class='text-center mb-16 max-w-3xl mx-auto'>
+                <h2
+                    class='text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight'
+                >
+                    About the Tool
+                </h2>
+                <p class='text-lg text-stone-500'>
+                    Craft stunning typography with our specialized Text Gradient
+                    Generator. From subtle linear fades to dynamic conic
+                    effects, this tool offers precise control over colors and
+                    angles. With built-in Tailwind CSS support, it's designed to
+                    streamline your modern web development workflow.
+                </p>
+            </div>
+
+            <div class='grid md:grid-cols-2 gap-12 mb-16'>
+                {/* --- Core Capabilities --- */}
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Core Capabilities
+                    </h3>
+                    <ul class='space-y-4'>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >3 Gradient Modes</strong
+                                >
+                                Full support for Linear, Radial, and Conic gradients
+                                to match any design style.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Dynamic Color Palette</strong
+                                >
+                                Add up to 5 colors, remove them, or rearrange stops
+                                to create the perfect blend.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Live Preview with Context</strong
+                                >
+                                Type your own text and toggle background colors (White/Washi/Dark)
+                                to check contrast.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Tailwind & CSS Export</strong
+                                >
+                                One-click copy for both standard CSS and optimized
+                                Tailwind utility classes.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* --- Workflow --- */}
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Workflow
+                    </h3>
+                    <ol
+                        class='space-y-5 relative pl-2 border-l-2 border-stone-200 ml-2'
+                    >
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-[17px] top-0 w-4 h-4 rounded-full bg-slate-800 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >01. Inspire</strong
+                            >
+                            <p>
+                                Hit the 'Random' button to instantly generate
+                                unique color combinations and angles.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-[17px] top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >02. Customize</strong
+                            >
+                            <p>
+                                Add new colors (up to 5), tweak hex codes, and
+                                adjust the gradient direction.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-[17px] top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >03. Preview</strong
+                            >
+                            <p>
+                                Edit the preview text and switch backgrounds to
+                                ensure readability.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-[17px] top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >04. Export</strong
+                            >
+                            <p>
+                                Copy the generated code. Use 'Copy Tailwind
+                                Class' for instant JIT compatibility.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            {/* --- Our Philosophy --- */}
+            <div
+                class='bg-stone-50 border border-stone-100 rounded-xl p-8 text-center md:text-left md:flex items-center gap-8'
+            >
+                <div class='shrink-0 mb-4 md:mb-0'>
+                    <h3
+                        class='text-lg font-bold text-slate-800 uppercase tracking-widest'
+                    >
+                        Our Focus
+                    </h3>
+                </div>
+                <div
+                    class='h-px w-full bg-stone-200 md:w-px md:h-16 md:bg-stone-200 shrink-0 hidden md:block'
+                >
+                </div>
+                <p class='text-sm md:text-base text-stone-600 italic'>
+                    "Simplicity meets functionality. We designed this generator
+                    to handle the complexities of CSS syntax—especially
+                    arbitrary values in Tailwind—so you can focus purely on
+                    creating beautiful typography."
+                </p>
+            </div>
+        </section>
+    </main>
 </Layout>

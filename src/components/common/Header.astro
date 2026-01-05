@@ -1,0 +1,19 @@
+---
+// src/components/common/Header.astro
+const {
+    mainTitle = 'KASANE - 襲',
+    subTitle = 'Japanese Traditional Color Palette - Explore and utilize a beautiful collection of Japanese traditional colors for your design projects.',
+} = Astro.props;
+---
+
+<header class='mb-16 text-center'>
+    <h1 class='text-4xl md:text-6xl font-bold mb-4 tracking-widest'>
+        {mainTitle}
+    </h1>
+    <p
+        class:list={[
+            'text-slate-500 text-base md:text-lg leading-relaxed tracking-normal',
+        ]}
+        set:html={subTitle}
+    />
+</header>

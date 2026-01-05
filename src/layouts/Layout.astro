@@ -3,6 +3,11 @@ import '../styles/global.css';
 import AppNav from '../components/common/AppNav.astro';
 import Footer from '../components/common/Footer.astro';
 import Toast from '../components/common/Toast.astro';
+
+const {
+    title = 'KASANE - 襲',
+    description = 'Japanese Traditional Color Palette - Explore and utilize a beautiful collection of Japanese traditional colors for your design projects.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,7 +17,8 @@ import Toast from '../components/common/Toast.astro';
         <meta name='viewport' content='width=device-width' />
         <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
         <meta name='generator' content={Astro.generator} />
-        <title>Astro Basics</title>
+        <title>{title}</title>
+        <meta name='description' content={description} />
     </head>
     <body class='bg-[#fcfaf2] text-slate-800'>
         <AppNav />

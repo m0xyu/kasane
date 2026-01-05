@@ -2,6 +2,7 @@
 import colors from '../data/colors.json';
 import type { TraditionalColor } from '../types/color';
 import ColorCard from './ColorCard.astro';
+import Header from './common/Header.astro';
 
 const colorList: TraditionalColor[] = colors;
 ---
@@ -13,17 +14,7 @@ const colorList: TraditionalColor[] = colors;
 </div>
 
 <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
-    <header class='mb-16 text-center'>
-        <h1 class='text-4xl md:text-6xl font-bold mb-4 tracking-widest'>
-            KASANE
-        </h1>
-        <p
-            class='text-sm md:text-base text-slate-500 uppercase tracking-[0.2em]'
-        >
-            Japanese Traditional Color Palette
-        </p>
-    </header>
-
+    <Header mainTitle='KASANE' subTitle='Japanese Traditional Color Palette' />
     <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
             colorList.map((color) => (
