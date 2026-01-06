@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Index from '../../components/tools/ShopifyColorGenerator/index';
+import Header from '../../components/common/Header.astro';
+---
+
+<Layout
+    title='Shopify Color Generator - KASANE - 襲'
+    description='Generate Shopify Horizon compatible color schemes from a single traditional Japanese color. Automatically calculates contrasts, hovers, and variant states.'
+>
+    <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
+        <Header
+            mainTitle='Shopify Color Generator'
+            subTitle='One color, full scheme.<br/>Generate a complete Shopify Horizon theme color palette instantly.'
+            isDescription={true}
+        />
+        <Index client:load />
+
+        <section
+            class='max-w-5xl mx-auto py-16 px-4 md:px-8 text-stone-600 leading-relaxed'
+        >
+            <div class='text-center mb-16 max-w-3xl mx-auto'>
+                <h2
+                    class='text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight'
+                >
+                    About the Tool
+                </h2>
+                <p class='text-lg text-stone-500'>
+                    Designed for Shopify merchants and developers using Horizon
+                    themes. Instead of manually adjusting over 30 color
+                    settings, simply define your <strong>Brand Color</strong> and
+                    <strong>Background</strong>. Our algorithm automatically
+                    calculates the perfect contrast for text, buttons, and
+                    borders.
+                </p>
+            </div>
+
+            <div class='grid md:grid-cols-2 gap-12 mb-16'>
+                {/* --- Core Capabilities --- */}
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Core Capabilities
+                    </h3>
+                    <ul class='space-y-4'>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Smart Contrast Logic</strong
+                                >
+                                Automatically detects whether the background is light
+                                or dark and adjusts text and button colors to ensure
+                                perfect readability (WCAG compliant).
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Atmospheric Mixing</strong
+                                >
+                                Instead of pure black or white, the algorithm mixes
+                                a hint (5%) of your brand color into the text, creating
+                                a cohesive and professional atmosphere.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Camouflage Avoidance</strong
+                                >
+                                If your background matches your brand color (e.g.,
+                                for a header), buttons automatically invert to ensure
+                                they don't disappear.
+                            </span>
+                        </li>
+                        <li class='flex gap-3 items-start'>
+                            <span class='text-slate-800 mt-1'>•</span>
+                            <span>
+                                <strong
+                                    class='text-slate-800 block text-sm mb-0.5'
+                                    >Ready for settings_data.json</strong
+                                >
+                                Outputs a valid JSON snippet that can be directly
+                                pasted into your theme's <code
+                                    >color_schemes</code
+                                > object.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                {/* --- Workflow --- */}
+                <div>
+                    <h3
+                        class='text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-stone-200 pb-2'
+                    >
+                        Workflow
+                    </h3>
+                    <ol
+                        class='space-y-5 relative pl-2 border-l-2 border-stone-200 ml-2'
+                    >
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-slate-800 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >01. Pick Brand Color</strong
+                            >
+                            <p>
+                                Choose your primary brand color. This will be
+                                used for buttons, links, and accents throughout
+                                the scheme.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >02. Select Background</strong
+                            >
+                            <p>
+                                Choose "White" for product pages, "Brand Color"
+                                for headers, or "Dark" for footers. The tool
+                                re-calculates everything instantly.
+                            </p>
+                        </li>
+                        <li class='pl-6 relative'>
+                            <span
+                                class='absolute -left-4.25 top-0 w-4 h-4 rounded-full bg-stone-300 border-4 border-white'
+                            ></span>
+                            <strong
+                                class='text-slate-800 text-sm uppercase tracking-wider block mb-1'
+                                >03. Copy & Apply</strong
+                            >
+                            <p>
+                                Copy the JSON snippet and paste it into your
+                                Shopify theme code (<code
+                                    >config/settings_data.json</code
+                                >).
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div
+                class='bg-stone-50 border border-stone-100 rounded-xl p-8 text-center md:text-left md:flex items-center gap-8'
+            >
+                <div class='shrink-0 mb-4 md:mb-0'>
+                    <h3
+                        class='text-lg font-bold text-slate-800 uppercase tracking-widest'
+                    >
+                        Pro Tip
+                    </h3>
+                </div>
+                <div
+                    class='h-px w-full bg-stone-200 md:w-px md:h-16 md:bg-stone-200 shrink-0 mb-4 md:mb-0'
+                >
+                </div>
+                <p class='text-sm md:text-base text-stone-600 italic'>
+                    "Create multiple schemes for different sections. We
+                    recommend generating a scheme with a <strong
+                        >White Background</strong
+                    > for content areas and one with a <strong
+                        >Brand Background</strong
+                    > for headers to create rhythm in your store design."
+                </p>
+            </div>
+        </section>
+    </main>
+</Layout>

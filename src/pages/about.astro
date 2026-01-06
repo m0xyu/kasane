@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/common/Header.astro';
+import ToolsGrid from '../components/ToolsGrid.astro.astro';
+---
+
+<Layout
+    title='About - KASANE - 襲'
+    description='KASANEについて。日本の伝統色と現代のWebデザインを融合させるプロジェクト。'
+>
+    {/* Background Noise */}
+    <div
+        class='fixed inset-0 opacity-[0.03] pointer-events-none z-50'
+        style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"
+    >
+    </div>
+
+    <div class='flex flex-col min-h-screen'>
+        <main class='max-w-7xl mx-auto px-6 py-12 py-20'>
+            <Header
+                mainTitle='About KASANE'
+                subTitle='The Philosophy of Colors'
+            />
+
+            <div class='space-y-16'>
+                <section class='space-y-6'>
+                    <h2
+                        class='text-2xl font-bold text-stone-800 tracking-tight flex items-center gap-3'
+                    >
+                        <span class='w-8 h-px bg-stone-300'></span>
+                        「襲」の色目
+                    </h2>
+                    <div
+                        class='prose prose-stone leading-loose text-stone-600 space-y-6'
+                    >
+                        <p>
+                            日本では古来より、衣服の表地と裏地、あるいは重ね着した衣服の色の取り合わせを
+                            <strong>「襲（かさね）の色目」</strong
+                            >として楽しんできました。
+                        </p>
+                        <p>
+                            四季折々の草花や風景を衣に映し、季節の移ろいを纏う。
+                            その繊細な色彩感覚は、現代のデザインにおいても色褪せることのないインスピレーションの源泉です。
+                        </p>
+                        <p>
+                            KASANEは、そんな日本の伝統色をデジタルの世界で「重ねる」ためのパレットです。
+                            Webデザイン、アプリケーション開発、あるいは日々のクリエイションにおいて、
+                            古き良き色彩が新たな彩りを添えることを願っています。
+                        </p>
+                    </div>
+                </section>
+
+                <section class='space-y-6'>
+                    <h2
+                        class='text-2xl font-bold text-stone-800 tracking-tight flex items-center gap-3'
+                    >
+                        <span class='w-8 h-px bg-stone-300'></span>
+                        開発者・デザイナーのために
+                    </h2>
+                    <div
+                        class='bg-stone-50 border border-stone-100 rounded-2xl p-8 md:p-10 space-y-6'
+                    >
+                        <p class='text-stone-600 leading-relaxed'>
+                            ただ色を眺めるだけでなく、<strong>「使える」</strong
+                            >ことにこだわりました。 Shopify、Tailwind
+                            CSS、SVG生成など、現代のワークフローに即したツール群を提供することで、
+                            伝統色をより身近な実用的なものへと昇華させます。
+                        </p>
+
+                        <div
+                            class='grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-medium text-stone-500'
+                        >
+                            <div class='flex items-center gap-2'>
+                                <span class='w-2 h-2 rounded-full bg-rose-300'
+                                ></span>
+                                Hex / RGB / HSL 対応
+                            </div>
+                            <div class='flex items-center gap-2'>
+                                <span class='w-2 h-2 rounded-full bg-blue-300'
+                                ></span>
+                                モダンなUIフレームワーク互換
+                            </div>
+                            <div class='flex items-center gap-2'>
+                                <span class='w-2 h-2 rounded-full bg-green-300'
+                                ></span>
+                                商用利用可能な配色生成
+                            </div>
+                            <div class='flex items-center gap-2'>
+                                <span class='w-2 h-2 rounded-full bg-amber-300'
+                                ></span>
+                                アクセシビリティ(WCAG)への配慮
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <ToolsGrid />
+            </div>
+        </main>
+    </div>
+</Layout>

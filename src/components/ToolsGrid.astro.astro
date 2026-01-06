@@ -1,0 +1,177 @@
+---
+// src/components/ToolsGrid.astro.astro
+import { ArrowRightIcon } from 'lucide-react';
+---
+
+<div class='grid md:grid-cols-2 gap-6 mb-16'>
+    <a
+        href='/tools/text-gradient-generator'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 md:p-10 text-center shadow-sm hover:shadow-md hover:border-pink-200/50 transition-all duration-500 ease-out'
+    >
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top_left,#FEDFE1_0%,transparent_50%),radial-gradient(circle_at_bottom_right,#F8B50020_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#DC9FB4,#F8B500)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    言葉を彩る、<br />あなただけの色合わせ。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'
+                        >Text Gradient Generator</strong
+                    >
+                </span>
+                <span class='flex items-center gap-1 opacity-70'>
+                    Create stunning typography
+                    <ArrowRightIcon
+                        className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                    />
+                </span>
+            </p>
+        </div>
+    </a>
+
+    <a
+        href='/tools/multi-color-palette'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 md:p-10 text-center shadow-sm hover:shadow-md hover:border-blue-200/50 transition-all duration-500 ease-out'
+    >
+        {/* Background: Cool Tones (Purple/Blue for Harmony) */}
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E0EBDF_0%,transparent_50%),radial-gradient(circle_at_bottom_left,#A5DEE420_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#89729E,#86C166)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    季節を重ねる、<br />調和のパレット。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'>Multi Color Palette</strong>
+                </span>
+                <span class='flex items-center gap-1 opacity-70'>
+                    Generate harmonious schemes
+                    <ArrowRightIcon
+                        className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                    />
+                </span>
+            </p>
+        </div>
+    </a>
+
+    <a
+        href='/tools/wagara-generator'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 text-center shadow-sm hover:shadow-md hover:border-indigo-200/50 transition-all duration-500 ease-out'
+    >
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top,#A5DEE420_0%,transparent_50%),radial-gradient(circle_at_bottom,#3A5B5220_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#1E50A2,#3A5B52)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    伝統を纏う、<br />無限の文様。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'>Wagara Generator</strong>
+                </span>
+                <span class='flex items-center gap-1 opacity-70'>
+                    Create seamless SVG backgrounds
+                    <ArrowRightIcon
+                        className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                    />
+                </span>
+            </p>
+        </div>
+    </a>
+    <a
+        href='/tools/tailwind-palette-generator'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 text-center shadow-sm hover:shadow-md hover:border-teal-200/50 transition-all duration-500 ease-out'
+    >
+        {/* Background: Utility/Tech feel (Asagi/Slate) */}
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top_right,#00A3AF20_0%,transparent_50%),radial-gradient(circle_at_bottom_left,#47556920_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#00A3AF,#475569)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    伝統の色を、<br />開発の力に。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'
+                        >Tailwind Palette Generator</strong
+                    >
+                </span>
+                <span class='flex items-center gap-1 opacity-70'>
+                    Generate full color scales
+                    <ArrowRightIcon
+                        className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                    />
+                </span>
+            </p>
+        </div>
+    </a>
+    <a
+        href='/tools/shopify-color-generator'
+        class='group relative block w-full overflow-hidden rounded-xl border border-stone-100 p-8 text-center shadow-sm hover:shadow-md hover:border-rose-200/50 transition-all duration-500 ease-out md:col-span-2 lg:col-span-1'
+    >
+        <div
+            class='absolute inset-0 bg-[radial-gradient(circle_at_top_left,#DC9FB420_0%,transparent_50%),radial-gradient(circle_at_bottom_right,#2D2D2D10_0%,transparent_50%)] opacity-30 group-hover:opacity-60 transition-opacity duration-500 z-0'
+        >
+        </div>
+
+        <div class='relative z-10 space-y-4'>
+            <h2 class='text-2xl md:text-4xl font-bold tracking-tight'>
+                <span
+                    class='bg-clip-text text-transparent bg-[linear-gradient(to_right_bottom,#DC9FB4,#2D2D2D)] group-hover:saturate-[1.2] transition-all duration-500 filter'
+                >
+                    一色で整う、<br />洗練のストアデザイン。
+                </span>
+            </h2>
+            <p
+                class='text-stone-500 font-medium text-sm md:text-base flex flex-col items-center justify-center gap-1 group-hover:text-stone-800 transition-colors'
+            >
+                <span>
+                    <strong class='text-stone-600'
+                        >Shopify Color Generator</strong
+                    >
+                </span>
+                <span class='flex items-center gap-1 opacity-70'>
+                    Instant Horizon theme color schemes
+                    <ArrowRightIcon
+                        className='w-4 h-4 transition-transform group-hover:translate-x-1'
+                    />
+                </span>
+            </p>
+        </div>
+    </a>
+</div>
