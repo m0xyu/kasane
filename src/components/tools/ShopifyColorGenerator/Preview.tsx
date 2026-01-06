@@ -47,7 +47,7 @@ export const Preview = ({ s }: Props) => {
                 style={{ backgroundColor: s.background }}
             >
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-                    <div className="flex-1 bg-stone-100 rounded-none aspect-4/5 relative overflow-hidden">
+                    <div className="flex-1 bg-gray-300 rounded-none aspect-4/5 relative overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center opacity-10 text-4xl font-bold tracking-widest">
                             IMG
                         </div>
@@ -57,35 +57,49 @@ export const Preview = ({ s }: Props) => {
                         <div>
                             <span
                                 className="text-xs font-bold uppercase tracking-widest mb-2 block"
-                                style={{ color: s.primary }}
+                                style={{ color: s.foreground }}
                             >
                                 New Collection
                             </span>
-                            <h1 className="text-3xl md:text-4xl font-medium mb-2">
+                            <h1
+                                className="text-3xl md:text-4xl font-medium mb-2"
+                                style={{ color: s.foreground_heading }}
+                            >
                                 Traditional Haori Jacket
                             </h1>
                             <div className="flex items-center gap-4">
-                                <span className="text-lg opacity-60 line-through">
+                                <span
+                                    className="text-lg opacity-60 line-through"
+                                    style={{ color: s.foreground }}
+                                >
                                     ¥32,000
                                 </span>
-                                <span className="text-xl font-medium">
+                                <span
+                                    className="text-xl font-medium"
+                                    style={{ color: s.foreground }}
+                                >
                                     ¥24,000
                                 </span>
-                                <span
+                                {/* <span
                                     className="text-xs px-2 py-1 rounded-full uppercase"
                                     style={{
                                         backgroundColor: s.primary,
-                                        color: s.primary_button_text,
+                                        color: s.foreground,
                                     }}
                                 >
                                     Sale
-                                </span>
+                                </span> */}
                             </div>
                         </div>
 
                         {/* Variant Picker */}
                         <div className="space-y-3">
-                            <span className="text-sm opacity-80">Size</span>
+                            <span
+                                className="text-sm opacity-80"
+                                style={{ color: s.foreground }}
+                            >
+                                Size
+                            </span>
                             <div className="flex flex-wrap gap-2">
                                 {['S', 'M', 'L'].map((size, i) => (
                                     <button
@@ -115,14 +129,21 @@ export const Preview = ({ s }: Props) => {
                         {/* Actions */}
                         <div className="space-y-3 pt-4">
                             <div className="flex gap-4 mb-4">
-                                <div className="w-32 flex items-center justify-between px-4 py-3 border rounded-xl">
+                                <div
+                                    className="w-32 flex items-center justify-between px-4 py-3 border rounded-xl"
+                                    style={{
+                                        backgroundColor: s.input_background,
+                                        color: s.input_text_color,
+                                        borderColor: s.input_border_color,
+                                    }}
+                                >
                                     <span>-</span>
                                     <span>1</span>
                                     <span>+</span>
                                 </div>
                             </div>
                             <button
-                                className="w-full py-3 px-6 rounded-xl font-medium shadow-sm transition-all hover:opacity-90 active:scale-[0.99]"
+                                className="w-full py-3 px-6 flex items-center justify-center rounded-xl font-medium shadow-sm transition-all hover:opacity-90 active:scale-[0.99]"
                                 style={{
                                     backgroundColor:
                                         s.primary_button_background,
@@ -131,7 +152,8 @@ export const Preview = ({ s }: Props) => {
                                     borderWidth: '1px',
                                 }}
                             >
-                                Add to cart
+                                <ShoppingBag className="w-5 h-5 pr-1" /> Add to
+                                cart
                             </button>
                             <button
                                 className="w-full py-3 px-6 rounded-xl font-medium transition-all hover:opacity-80"

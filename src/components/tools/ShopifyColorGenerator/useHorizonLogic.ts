@@ -2,38 +2,50 @@
 import { useState, useMemo } from 'react';
 import chroma from 'chroma-js';
 import type { HorizonSettings } from './types';
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 
 export const useHorizonLogic = () => {
-    const [brandColor, setBrandColor] = useState('#DC9FB4');
+    // 1. ブランドカラー (Primary)
+    const [brandColor, setBrandColor] = useLocalStorage<string>(
+        'kasane-horizon-brand',
+        '#DC9FB4'
+    );
 
-    const generateSettings = (isBrandBackground: boolean): HorizonSettings => {
+    // 2. 背景色 (Background) - 自由設定可能に
+    const [bgColor, setBgColor] = useLocalStorage<string>(
+        'kasane-horizon-bg',
+        '#FFFFFF'
+    );
+
+    const settings: HorizonSettings = useMemo(() => {
         const primary = brandColor;
+        const bg = bgColor;
 
-        // Header用: ブランドカラー / Product用: 白
-        const bg = isBrandBackground ? primary : '#FFFFFF';
-
-        // 2. 基本文字色の決定
-        // 背景色に対するコントラスト比で白か黒かを判定
+        // 背景の明るさを判定 (4.5以上なら暗い背景とみなす)
         const isDarkBg = chroma.contrast(bg, '#FFFFFF') > 4.5;
-        const baseFg = isDarkBg ? '#FFFFFF' : '#121212';
+        // ベース文字色: 背景が暗ければ白、明るければ黒
+        // ブランドカラーを 5% 混ぜて、サイト全体の統一感を出す
+        const rawFg = isDarkBg
+            ? chroma.mix('#FFFFFF', primary, 0.05).hex()
+            : chroma.mix('#121212', primary, 0.05).hex();
 
-        const fgHeading = baseFg;
-        const fg = baseFg;
-        const borderBase = chroma(primary).alpha(0.3).hex();
+        // ブランドカラーが背景に近い色の場合、文字色が見づらくなるので調整
+        // console.log(chroma.contrast(bg, rawFg));
+        const fg =
+            chroma.contrast(bg, rawFg) >= 4.5
+                ? rawFg
+                : isDarkBg
+                ? '#FFFFFF'
+                : '#121212';
 
-        // 入力欄 (Product用など白背景の時は、入力欄を少しグレーにするか白のまま枠線をつける)
-        const inputBg = isDarkBg ? 'rgba(255,255,255, 0.1)' : '#FFFFFF';
-        const inputText = baseFg;
-        const inputBorder = chroma(baseFg).alpha(0.2).hex();
+        const fgHeading = fg;
 
-        const primaryHover = chroma(primary).darken(0.5).hex();
-
+        const isBgSimilarToPrimary = chroma.distance(bg, primary) < 20;
         let btnBg, btnText, btnBorder;
-
-        if (isBrandBackground) {
-            btnBg = baseFg;
+        if (isBgSimilarToPrimary) {
+            btnBg = fg;
             btnText = primary;
-            btnBorder = baseFg;
+            btnBorder = fg;
         } else {
             btnBg = primary;
             btnText =
@@ -43,22 +55,26 @@ export const useHorizonLogic = () => {
             btnBorder = primary;
         }
 
-        const btnHoverBg = isBrandBackground
-            ? chroma(baseFg).alpha(0.9).hex()
-            : chroma(primary).darken(0.1).hex();
+        const btnHoverBg = isBgSimilarToPrimary
+            ? chroma(fg).alpha(0.9).hex() // 反転時は少し透明に
+            : chroma(primary).darken(0.1).hex(); // 通常時は少し暗く
 
-        const btnHoverText = isBrandBackground ? primary : btnText;
+        const btnHoverText = isBgSimilarToPrimary ? primary : btnText;
+
+        const borderBase = chroma(primary).alpha(0.2).hex();
+        const secondaryBorder = chroma(primary).darken(1.1).hex();
+
+        const inputBg = isDarkBg ? 'rgba(255, 255, 255, 0.2)' : '#FFFFFF';
+        const inputText = fg;
 
         return {
             background: bg,
             foreground_heading: fgHeading,
-            foreground: chroma(fg)
-                .alpha(isDarkBg ? 0.9 : 0.8)
-                .hex(),
+            foreground: chroma(fg).alpha(0.85).hex(),
             primary: primary,
-            primary_hover: primaryHover,
+            primary_hover: chroma(primary).darken(0.1).hex(),
             border: borderBase,
-            shadow: chroma('#000000').alpha(0.1).hex(),
+            shadow: chroma(fg).alpha(0.1).hex(),
 
             primary_button_background: btnBg,
             primary_button_text: btnText,
@@ -68,22 +84,24 @@ export const useHorizonLogic = () => {
             primary_button_hover_border: btnHoverBg,
 
             secondary_button_background: 'transparent',
-            secondary_button_text: chroma(primary).darken(1.1).hex(),
-            secondary_button_border: chroma(primary).darken(1.1).hex(),
-            secondary_button_hover_background: chroma(baseFg).alpha(0.1).hex(),
-            secondary_button_hover_text: baseFg,
-            secondary_button_hover_border: baseFg,
+            secondary_button_text: fg,
+            secondary_button_border: secondaryBorder,
+            secondary_button_hover_background: chroma(fg).alpha(0.05).hex(),
+            secondary_button_hover_text: fg,
+            secondary_button_hover_border: fg,
 
             input_background: inputBg,
             input_text_color: inputText,
-            input_border_color: inputBorder,
-            input_hover_background: chroma(inputBg).darken(0.05).hex(),
+            input_border_color: borderBase,
+            input_hover_background: isDarkBg
+                ? 'rgba(255,255,255,0.2)'
+                : '#F9F9F9',
 
             variant_background_color: 'transparent',
-            variant_text_color: baseFg,
+            variant_text_color: fg,
             variant_border_color: borderBase,
-            variant_hover_background_color: chroma(baseFg).alpha(0.1).hex(),
-            variant_hover_text_color: baseFg,
+            variant_hover_background_color: chroma(fg).alpha(0.05).hex(),
+            variant_hover_text_color: fg,
             variant_hover_border_color: borderBase,
 
             selected_variant_background_color: btnBg,
@@ -93,41 +111,25 @@ export const useHorizonLogic = () => {
             selected_variant_hover_text_color: btnHoverText,
             selected_variant_hover_border_color: btnHoverBg,
         };
-    };
+    }, [brandColor, bgColor]);
 
-    const headerSettings = useMemo(() => generateSettings(true), [brandColor]); // 背景=Brand
-    const productSettings = useMemo(
-        () => generateSettings(false),
-        [brandColor]
-    );
-
-    const createJson = (name: string, data: HorizonSettings) => {
-        return JSON.stringify(
-            {
-                color_schemes: {
-                    [`scheme-${name}`]: { settings: data },
+    const jsonOutput = useMemo(() => {
+        const output = {
+            color_schemes: {
+                'scheme-kasane-custom': {
+                    settings: settings,
                 },
             },
-            null,
-            2
-        );
-    };
-
-    const headerJson = useMemo(
-        () => createJson('kasane-header', headerSettings),
-        [headerSettings]
-    );
-    const productJson = useMemo(
-        () => createJson('kasane-product', productSettings),
-        [productSettings]
-    );
+        };
+        return JSON.stringify(output, null, 2);
+    }, [settings]);
 
     return {
         brandColor,
         setBrandColor,
-        headerSettings,
-        productSettings,
-        headerJson,
-        productJson,
+        bgColor,
+        setBgColor,
+        settings,
+        jsonOutput,
     };
 };
