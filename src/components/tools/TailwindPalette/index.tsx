@@ -1,7 +1,11 @@
 // src/components/tools/TailwindPalette/index.tsx
 import { useEffect, useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
-import { useTailwindPalette } from './useTailwindPalette';
+import {
+    useTailwindPalette,
+    type ColorFormat,
+    type OutputSyntax,
+} from './useTailwindPalette';
 import { UiPreview } from './UiPreview';
 import { Copy, Check, Palette } from 'lucide-react';
 import colorsData from '../../../data/colors.json';
@@ -14,6 +18,10 @@ export default function TailwindPaletteGenerator() {
         setColorName,
         palette,
         configCode,
+        format,
+        setFormat,
+        syntax,
+        setSyntax,
     } = useTailwindPalette();
     const [copied, setCopied] = useState(false);
 
@@ -27,7 +35,7 @@ export default function TailwindPaletteGenerator() {
         window.dispatchEvent(
             new CustomEvent('toast', {
                 detail: {
-                    message: 'Tailwind config copied to clipboard!',
+                    message: `${syntax} copied to clipboard!`,
                     type: 'success',
                 },
             })
@@ -110,10 +118,67 @@ export default function TailwindPaletteGenerator() {
                     </div>
                 </div>
 
-                <div className="bg-slate-900 rounded-xl overflow-hidden shadow-md">
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
+                {/* --- Output Settings --- */}
+                <div className="bg-white p-5 rounded-xl border border-stone-200 shadow-sm space-y-4">
+                    <h3 className="text-xs font-bold text-stone-400 uppercase tracking-widest">
+                        Output Format
+                    </h3>
+
+                    {/* 1. Syntax Selection (v4 / v3 / CSS) */}
+                    <div className="flex bg-stone-100 p-1 rounded-lg">
+                        {(
+                            [
+                                'tailwind_v4',
+                                'tailwind_v3',
+                                'css_variables',
+                            ] as OutputSyntax[]
+                        ).map((s) => (
+                            <button
+                                key={s}
+                                onClick={() => setSyntax(s)}
+                                className={`flex-1 py-1.5 text-xs font-bold rounded-md transition-all ${
+                                    syntax === s
+                                        ? 'bg-white text-stone-800 shadow-sm'
+                                        : 'text-stone-500 hover:text-stone-700'
+                                }`}
+                            >
+                                {s === 'tailwind_v4' && 'v4'}
+                                {s === 'tailwind_v3' && 'v3'}
+                                {s === 'css_variables' && 'CSS'}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* 2. Color Unit Selection (Hex / RGB / OKLCH...) */}
+                    <div className="grid grid-cols-4 gap-2">
+                        {(['hex', 'rgb', 'hsl', 'oklch'] as ColorFormat[]).map(
+                            (f) => (
+                                <button
+                                    key={f}
+                                    onClick={() => setFormat(f)}
+                                    className={`py-1.5 px-2 text-[10px] font-bold uppercase rounded border transition-colors ${
+                                        format === f
+                                            ? 'border-rose-400 bg-rose-50 text-rose-600'
+                                            : 'border-stone-200 bg-white text-stone-500 hover:border-stone-300'
+                                    }`}
+                                >
+                                    {f}
+                                </button>
+                            )
+                        )}
+                    </div>
+                </div>
+
+                {/* Code Output Area */}
+                <div className="bg-slate-900 rounded-xl overflow-hidden shadow-lg border border-slate-800">
+                    {/* Header */}
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950">
                         <span className="text-xs font-bold text-slate-400">
-                            tailwind.config.js
+                            {syntax === 'tailwind_v4'
+                                ? 'theme.css'
+                                : syntax === 'tailwind_v3'
+                                ? 'tailwind.config.js'
+                                : 'variables.css'}
                         </span>
                         <button
                             onClick={handleCopy}
@@ -127,9 +192,12 @@ export default function TailwindPaletteGenerator() {
                             {copied ? 'Copied' : 'Copy'}
                         </button>
                     </div>
-                    <pre className="p-4 overflow-x-auto text-[10px] md:text-xs text-slate-300 font-mono leading-relaxed">
-                        {configCode}
-                    </pre>
+                    {/* Code Body */}
+                    <div className="relative group">
+                        <pre className="p-4 overflow-x-auto text-[10px] text-blue-100 font-mono leading-relaxed h-64 scrollbar-thin scrollbar-thumb-slate-700">
+                            {configCode}
+                        </pre>
+                    </div>
                 </div>
             </div>
 
