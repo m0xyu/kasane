@@ -20,7 +20,7 @@ const dropdownItems = [
         url: '/tools/text-gradient-generator',
     },
     {
-        icon: Layers,
+        icon: Palette,
         label: 'Multi-Color Palette',
         desc: 'Japanese multi-color palette',
         url: '/tools/multi-color-palette',
@@ -30,12 +30,6 @@ const dropdownItems = [
         label: 'Wagara Generator',
         desc: 'Generate stunning wagara patterns',
         url: '/tools/wagara-generator',
-    },
-    {
-        icon: Palette,
-        label: 'Color Palette',
-        desc: 'Japanese traditional color palette',
-        url: '/tools/color-palette',
     },
     {
         icon: Wind,
@@ -59,7 +53,6 @@ const dropdownItems = [
         <Logo />
         <nav class='hidden md:block h-full'>
             <ul class='flex justify-center gap-8 text-sm tracking-widest'>
-                <li><a href='/'>Home</a></li>
                 <li class='relative group h-full'>
                     <button
                         id='mega-menu-dropdown-button'
@@ -85,12 +78,15 @@ const dropdownItems = [
                         <DropDownMenu items={dropdownItems} />
                     </div>
                 </li>
-                <li>
+                <li><a href='/'>Home</a></li>
+                <li><a href='/colors'>Colors</a></li>
+                <li><a href='/about'>About</a></li>
+                <!-- <li>
                     <a
                         href='/login'
                         class='hover:text-slate-900 transition-colors'>Login</a
                     >
-                </li>
+                </li> -->
             </ul>
         </nav>
         <button
@@ -116,11 +112,7 @@ const dropdownItems = [
         class='hidden md:hidden border-t border-stone-100 bg-[#fcfaf2] absolute w-full left-0 buttom-0 shadow-lg'
     >
         <ul class='flex flex-col p-4 gap-4 text-sm font-medium text-slate-600'>
-            <li>
-                <a href='/' class='block py-2 hover:text-slate-900'>Home</a>
-            </li>
-
-            <li class='border-t border-stone-100 pt-4'>
+            <li class='border-b border-stone-100 pt-4'>
                 <span
                     class='block mb-2 text-xs text-stone-400 uppercase tracking-widest'
                     >Tools</span
@@ -141,23 +133,43 @@ const dropdownItems = [
                     }
                 </div>
             </li>
-
-            <li class='border-t border-stone-100 pt-4'>
+            <li>
+                <a
+                    href='/'
+                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3 border-b'
+                    >Home</a
+                >
+            </li>
+            <li>
+                <a
+                    href='/colors'
+                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3 border-b'
+                    >Colors</a
+                >
+            </li>
+            <li>
+                <a
+                    href='/about'
+                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3'
+                    >About</a
+                >
+            </li>
+            <!-- <li class='border-t border-stone-100 pt-4'>
                 <a href='/login' class='block py-2 hover:text-slate-900'
                     >Login</a
                 >
-            </li>
+            </li> -->
         </ul>
+
+        <script>
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        </script>
     </div>
 </div>
-
-<script>
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-</script>

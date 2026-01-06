@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/common/Header.astro';
+import ColorCard from '../components/ColorCard.astro';
+import colors from '../data/colors.json';
+import type { TraditionalColor } from '../types/color';
+import ToolsGrid from '../components/ToolsGrid.astro.astro';
+
+const colorList: TraditionalColor[] = colors;
+---
+
+<Layout
+    title='Traditional Colors - KASANE - 襲'
+    description='日本の伝統色一覧。四季折々の色彩をHex, RGB, CMYK値とともに紹介します。'
+>
+    {/* Background Noise */}
+    <div
+        class='fixed inset-0 opacity-[0.03] pointer-events-none z-50'
+        style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"
+    >
+    </div>
+
+    <div class='flex flex-col min-h-screen'>
+        <main class='flex-1 max-w-7xl mx-auto px-6 py-12 md:py-20 w-full'>
+            <Header
+                mainTitle='Traditional Colors'
+                subTitle='The Collection of Japanese Colors'
+                isDescription={true}
+            />
+
+            {/* Description Text */}
+            <div
+                class='max-w-2xl mx-auto text-center mb-16 text-stone-500 leading-relaxed'
+            >
+                <p>
+                    日本古来より伝わる色彩のアーカイブ。<br />
+                    名前の由来や季節感と共に、現代のデザインにも活かせるカラーコードを提供します。
+                </p>
+            </div>
+
+            <div
+                class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16'
+            >
+                {
+                    colorList.map((color) => (
+                        <div class='group relative bg-white border border-stone-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden'>
+                            <ColorCard color={color} />
+                        </div>
+                    ))
+                }
+            </div>
+
+            <ToolsGrid />
+        </main>
+    </div>
+</Layout>
