@@ -7,9 +7,11 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
 
-// https://astro.build/config
+import cloudflare from '@astrojs/cloudflare';
+
 export default defineConfig({
     site: 'https://kasane-palette.dev',
+
     integrations: [
         react(),
         sitemap(),
@@ -23,4 +25,5 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+    adapter: cloudflare(),
 });
