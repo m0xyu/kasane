@@ -6,7 +6,10 @@ import { MenuIcon, X } from 'lucide-react';
 const MobileMenu = () => {
     return (
         <DropdownMenu.Root>
-            <DropdownMenu.Trigger className="group flex items-center gap-1 hover:text-stone-500 focus-visible:ring-2 focus-visible:ring-offset-2 outline-none transition-colors">
+            <DropdownMenu.Trigger
+                aria-label="Menu Button"
+                className="group flex items-center gap-1 hover:text-stone-500 focus-visible:ring-2 focus-visible:ring-offset-2 outline-none transition-colors"
+            >
                 <MenuIcon className="w-6 h-6 group-data-[state=open]:hidden" />
                 <X className="w-6 h-6 group-data-[state=closed]:hidden" />
             </DropdownMenu.Trigger>
