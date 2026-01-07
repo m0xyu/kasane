@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MainHeader from '../components/common/MainHeader.astro';
+---
+
+<Layout
+    title='404 Not Found - KASANE - 襲'
+    description='Page not found. お探しのページは見つかりませんでした。'
+>
+    <div class='flex flex-col min-h-[60vh] justify-center'>
+        <main class='max-w-7xl mx-auto px-6 py-12 w-full text-center'>
+            <MainHeader mainTitle='404' subTitle='Page Not Found' />
+
+            <div class='max-w-lg mx-auto mt-4'>
+                <div
+                    class='space-y-6 prose prose-stone leading-loose text-stone-600'
+                >
+                    <p>
+                        申し訳ありません。<br />
+                        お探しのページは存在しないか、移動した可能性があります。
+                    </p>
+                    <p class='text-sm text-stone-500'>
+                        "Like the changing seasons, the page you are looking for
+                        may have faded away."
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</Layout>
