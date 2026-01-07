@@ -141,10 +141,13 @@ export default function ShopifyColorGenerator() {
                     </div>
                 </div>
                 <p className="text-xs text-stone-500 px-1">
-                    *Paste into your theme's <code>settings_data.json</code>
-                    . <br />
-                    Create multiple schemes by changing the background color and
-                    copying again.
+                    *Paste this snippet into{' '}
+                    <code className="font-bold">settings_data.json</code> inside
+                    the <code className="font-bold">color_schemes</code> object.
+                    <br />
+                    Don't forget to add a comma{' '}
+                    <code className="font-bold">,</code> between schemes if
+                    needed.
                 </p>
             </div>
 

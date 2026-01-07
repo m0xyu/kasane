@@ -9,31 +9,13 @@
         "description": "The pale pink color of cherry blossoms in full bloom. It symbolizes the arrival of spring and the ephemeral beauty of life in Japanese culture."
     },
     {
-        "id": "nadeshiko",
-        "nameJp": "撫子色",
-        "nameEn": "Pink Carnation",
-        "reading": "Nadeshiko-iro",
-        "hex": "#DC9FB4",
+        "id": "momo",
+        "nameJp": "桃色",
+        "nameEn": "Peach Flower",
+        "reading": "Momo-iro",
+        "hex": "#F09199",
         "category": "Spring",
-        "description": "Named after the fringed pink flower (Dianthus). It represents the ideal Japanese woman ('Yamato Nadeshiko') — elegant, modest, and strong."
-    },
-    {
-        "id": "ruri",
-        "nameJp": "瑠璃色",
-        "nameEn": "Lapis Lazuli",
-        "reading": "Ruri-iro",
-        "hex": "#1E50A2",
-        "category": "Blue",
-        "description": "A deep, vivid blue resembling the precious stone Lapis Lazuli. In Buddhism, it is considered one of the seven treasures and represents purity."
-    },
-    {
-        "id": "akane",
-        "nameJp": "茜色",
-        "nameEn": "Madder Red",
-        "reading": "Akane-iro",
-        "hex": "#B7282E",
-        "category": "Red",
-        "description": "A deep red derived from the madder plant roots. It is famously used to describe the beautiful glowing sky at sunset."
+        "description": "A gentle pink resembling peach blossoms. In Japan, peach trees are believed to ward off evil spirits and are celebrated during the Girls' Festival."
     },
     {
         "id": "yamabuki",
@@ -41,8 +23,17 @@
         "nameEn": "Golden Yellow",
         "reading": "Yamabuki-iro",
         "hex": "#F8B500",
-        "category": "Yellow",
+        "category": "Spring",
         "description": "A bright, golden yellow named after the Japanese globeflower. Historically, it was also used as a slang term for gold coins (koban)."
+    },
+    {
+        "id": "nanohana",
+        "nameJp": "菜の花色",
+        "nameEn": "Rapeseed Yellow",
+        "reading": "Nanohana-iro",
+        "hex": "#FFEC47",
+        "category": "Spring",
+        "description": "A vivid, warm yellow resembling the fields of rapeseed flowers that signal the height of spring."
     },
     {
         "id": "moegi",
@@ -54,31 +45,49 @@
         "description": "A bright yellowish-green representing the color of fresh young sprouts in spring. It signifies youth, energy, and new beginnings."
     },
     {
-        "id": "tokiwa",
-        "nameJp": "常盤色",
-        "nameEn": "Evergreen Green",
-        "reading": "Tokiwa-iro",
-        "hex": "#007B43",
-        "category": "Green",
-        "description": "A deep green like pine or cedar leaves that do not change color even in winter. It symbolizes eternity, longevity, and unchanging fortune."
+        "id": "wakakusa",
+        "nameJp": "若草色",
+        "nameEn": "Young Grass",
+        "reading": "Wakakusa-iro",
+        "hex": "#C3D825",
+        "category": "Spring",
+        "description": "A bright, fresh green representing the new grass sprouting in early spring. It is a traditional color of the Heian period nobility."
     },
     {
-        "id": "kurenai",
-        "nameJp": "紅",
-        "nameEn": "Crimson",
-        "reading": "Kurenai",
-        "hex": "#CB1B45",
-        "category": "Red",
-        "description": "A vivid red dyed from safflowers. In the Heian period, wearing this color was strictly regulated and allowed only for high-ranking court ladies."
+        "id": "uguisu",
+        "nameJp": "鶯色",
+        "nameEn": "Nightingale Brown",
+        "reading": "Uguisu-iro",
+        "hex": "#928C36",
+        "category": "Spring",
+        "description": "A dull, greenish-brown color resembling the feathers of the Japanese bush warbler (Uguisu), a bird that heralds the coming of spring."
     },
     {
-        "id": "asagi",
-        "nameJp": "浅葱色",
-        "nameEn": "Pale Chive",
-        "reading": "Asagi-iro",
-        "hex": "#33A6B8",
-        "category": "Blue",
-        "description": "A pale blue-green color like the leaves of green onions. It was famously worn on the haori (jackets) of the Shinsengumi samurai police force."
+        "id": "wasurenagusa",
+        "nameJp": "勿忘草色",
+        "nameEn": "Forget-me-not Blue",
+        "reading": "Wasurenagusa-iro",
+        "hex": "#89C3EB",
+        "category": "Spring",
+        "description": "A soft, bright blue named after the small, delicate forget-me-not flowers that bloom in spring. It represents true love and memories."
+    },
+    {
+        "id": "toki",
+        "nameJp": "鴇色",
+        "nameEn": "Ibis Pink",
+        "reading": "Toki-iro",
+        "hex": "#F4B3C2",
+        "category": "Spring",
+        "description": "A soft pinkish-orange, the color of the Japanese Crested Ibis's feathers. A gentle color often seen in kimono patterns."
+    },
+    {
+        "id": "sumire",
+        "nameJp": "菫色",
+        "nameEn": "Violet",
+        "reading": "Sumire-iro",
+        "hex": "#7058A3",
+        "category": "Spring",
+        "description": "A deep, bluish-purple resembling the wild violet flowers found in Japanese fields during spring."
     },
     {
         "id": "fuji",
@@ -86,35 +95,179 @@
         "nameEn": "Wisteria Purple",
         "reading": "Fuji-iro",
         "hex": "#BBBCDE",
-        "category": "Purple",
-        "description": "A light, elegant purple resembling wisteria flowers. Highly cherished by Heian nobility, it appears frequently in classic literature like 'The Tale of Genji'."
+        "category": "Spring",
+        "description": "A light, elegant purple resembling wisteria flowers. Highly cherished by Heian nobility, it appears frequently in classic literature."
     },
     {
-        "id": "edoshare",
-        "nameJp": "江戸紫",
-        "nameEn": "Edo Purple",
-        "reading": "Edo-murasaki",
-        "hex": "#745399",
-        "category": "Purple",
-        "description": "A stylish, bluish-purple beloved by the people of Edo (old Tokyo). It represents the 'Iki' (chic) aesthetic of the Kabuki theater culture."
+        "id": "asagi",
+        "nameJp": "浅葱色",
+        "nameEn": "Pale Chive",
+        "reading": "Asagi-iro",
+        "hex": "#33A6B8",
+        "category": "Summer",
+        "description": "A pale blue-green color like the leaves of green onions. It was famously worn on the haori (jackets) of the Shinsengumi samurai police force."
     },
     {
-        "id": "kyomurasaki",
-        "nameJp": "京紫",
-        "nameEn": "Kyoto Purple",
-        "reading": "Kyou-murasaki",
-        "hex": "#9D5B8B",
-        "category": "Purple",
-        "description": "A reddish-purple traditionally dyed in Kyoto. In contrast to the bluish 'Edo Purple', it represents the elegant and graceful style of the ancient capital."
+        "id": "ruri",
+        "nameJp": "瑠璃色",
+        "nameEn": "Lapis Lazuli",
+        "reading": "Ruri-iro",
+        "hex": "#1E50A2",
+        "category": "Summer",
+        "description": "A deep, vivid blue resembling the precious stone Lapis Lazuli. In Buddhism, it is considered one of the seven treasures and represents purity."
     },
     {
-        "id": "suou",
-        "nameJp": "蘇芳",
-        "nameEn": "Sappanwood Red",
-        "reading": "Suou",
-        "hex": "#9E3D3F",
-        "category": "Red",
-        "description": "A dark, dull red derived from sappanwood. In the ancient court hierarchy, it was a prestigious color worn by high-ranking officials second only to purple."
+        "id": "tsuyukusa",
+        "nameJp": "露草色",
+        "nameEn": "Dayflower Blue",
+        "reading": "Tsuyukusa-iro",
+        "hex": "#38A1DB",
+        "category": "Summer",
+        "description": "A bright blue named after the Asiatic dayflower, which blooms in early summer mornings. The dye from this flower was historically used for draft sketches."
+    },
+    {
+        "id": "kamenozoki",
+        "nameJp": "瓶覗",
+        "nameEn": "Peeking into the Vat",
+        "reading": "Kamenozoki",
+        "hex": "#A2D7DD",
+        "category": "Summer",
+        "description": "An extremely pale indigo blue, achieved by only briefly dipping the cloth into the dye vat (peeking in). It represents the coolest, lightest shade of summer blue."
+    },
+    {
+        "id": "mizu",
+        "nameJp": "水色",
+        "nameEn": "Water Blue",
+        "reading": "Mizu-iro",
+        "hex": "#BCE2E8",
+        "category": "Summer",
+        "description": "A pale, clear blue representing pure water. It is a quintessential summer color, evoking coolness and refreshment."
+    },
+    {
+        "id": "ai",
+        "nameJp": "藍色",
+        "nameEn": "Indigo",
+        "reading": "Ai-iro",
+        "hex": "#165E83",
+        "category": "Summer",
+        "description": "The deep blue color of natural indigo dye. It is known as 'Japan Blue' abroad and has been the most common color for everyday clothing in Japan."
+    },
+    {
+        "id": "aotake",
+        "nameJp": "青竹色",
+        "nameEn": "Green Bamboo",
+        "reading": "Aotake-iro",
+        "hex": "#7EBEAB",
+        "category": "Summer",
+        "description": "A dull blue-green color resembling the stalk of a growing bamboo. It represents growth and straightness."
+    },
+    {
+        "id": "nadeshiko",
+        "nameJp": "撫子色",
+        "nameEn": "Pink Carnation",
+        "reading": "Nadeshiko-iro",
+        "hex": "#DC9FB4",
+        "category": "Summer",
+        "description": "Named after the fringed pink flower (Dianthus). While considered one of the seven flowers of autumn, it blooms in summer and represents the ideal Japanese woman."
+    },
+    {
+        "id": "botan",
+        "nameJp": "牡丹色",
+        "nameEn": "Peony Pink",
+        "reading": "Botan-iro",
+        "hex": "#C1328E",
+        "category": "Summer",
+        "description": "A rich, vibrant magenta-pink inspired by the peony, the 'King of Flowers'. It symbolizes wealth, nobility, and bravery."
+    },
+    {
+        "id": "himawari",
+        "nameJp": "向日葵色",
+        "nameEn": "Sunflower Yellow",
+        "reading": "Himawari-iro",
+        "hex": "#FCC800",
+        "category": "Summer",
+        "description": "A brilliant yellow named after the sunflower. Though a relatively modern addition to traditional colors (Edo period), it symbolizes the peak of summer."
+    },
+    {
+        "id": "akane",
+        "nameJp": "茜色",
+        "nameEn": "Madder Red",
+        "reading": "Akane-iro",
+        "hex": "#B7282E",
+        "category": "Autumn",
+        "description": "A deep red derived from the madder plant roots. It is famously used to describe the beautiful glowing sky at sunset in autumn."
+    },
+    {
+        "id": "kikyo",
+        "nameJp": "桔梗色",
+        "nameEn": "Bellflower Purple",
+        "reading": "Kikyo-iro",
+        "hex": "#5654A2",
+        "category": "Autumn",
+        "description": "A bluish-purple named after the balloon flower, one of the seven flowers of autumn. It represents unchanging love and honesty."
+    },
+    {
+        "id": "kakishibu",
+        "nameJp": "柿渋色",
+        "nameEn": "Persimmon Brown",
+        "reading": "Kakishibu-iro",
+        "hex": "#9F563A",
+        "category": "Autumn",
+        "description": "A reddish-brown dye made from fermented unripe persimmons. It has been used for centuries as a waterproof coating for wood and paper."
+    },
+    {
+        "id": "kohaku",
+        "nameJp": "琥珀色",
+        "nameEn": "Amber",
+        "reading": "Kohaku-iro",
+        "hex": "#BF783A",
+        "category": "Autumn",
+        "description": "A translucent yellowish-brown color resembling amber (fossilized resin). It represents luxury and warmth."
+    },
+    {
+        "id": "yamabukicha",
+        "nameJp": "山吹茶",
+        "nameEn": "Golden Tea",
+        "reading": "Yamabuki-cha",
+        "hex": "#C89932",
+        "category": "Autumn",
+        "description": "A deep, golden-brown color. A popular and chic color variation of the bright Yamabuki color, favored in the Edo period."
+    },
+    {
+        "id": "kuchiba",
+        "nameJp": "朽葉色",
+        "nameEn": "Fallen Leaves",
+        "reading": "Kuchiba-iro",
+        "hex": "#917347",
+        "category": "Autumn",
+        "description": "A brownish color representing decaying leaves in late autumn. Heian nobility had many variations of this color to express the subtleties of the season."
+    },
+    {
+        "id": "odo",
+        "nameJp": "黄土色",
+        "nameEn": "Ochre",
+        "reading": "Odo-iro",
+        "hex": "#C39143",
+        "category": "Autumn",
+        "description": "A reddish-yellow earth color. It is one of the oldest pigments used by mankind and represents the earth and harvest."
+    },
+    {
+        "id": "ebi",
+        "nameJp": "葡萄色",
+        "nameEn": "Grape / Wine",
+        "reading": "Ebi-iro",
+        "hex": "#772F38",
+        "category": "Autumn",
+        "description": "A deep reddish-purple resembling wild grapes (Ebizuru). Note that 'Ebi' here refers to the grape plant, not the shrimp (also 'Ebi')."
+    },
+    {
+        "id": "kokihi",
+        "nameJp": "深緋",
+        "nameEn": "Deep Scarlet",
+        "reading": "Kokihi",
+        "hex": "#C9171E",
+        "category": "Autumn",
+        "description": "A deep, intense scarlet. Historically, this was a high-ranking color, worn by officials of the 4th rank and above."
     },
     {
         "id": "rikyucha",
@@ -122,8 +275,143 @@
         "nameEn": "Rikyu Tea",
         "reading": "Rikyu-cha",
         "hex": "#8F8667",
-        "category": "Earth",
-        "description": "A grayish-brown green named after Sen no Rikyu, the greatest tea master. It embodies the concept of 'Wabi-Sabi'—finding beauty in imperfection."
+        "category": "Autumn",
+        "description": "A grayish-brown green named after Sen no Rikyu. It embodies the concept of 'Wabi-Sabi'—finding beauty in imperfection and simplicity."
+    },
+    {
+        "id": "kyomurasaki",
+        "nameJp": "京紫",
+        "nameEn": "Kyoto Purple",
+        "reading": "Kyou-murasaki",
+        "hex": "#9D5B8B",
+        "category": "Autumn",
+        "description": "A reddish-purple traditionally dyed in Kyoto. It represents the elegant and graceful style of the ancient capital."
+    },
+    {
+        "id": "tokiwa",
+        "nameJp": "常盤色",
+        "nameEn": "Evergreen Green",
+        "reading": "Tokiwa-iro",
+        "hex": "#007B43",
+        "category": "Winter",
+        "description": "A deep green like pine or cedar leaves that do not change color even in winter. It symbolizes eternity, longevity, and unchanging fortune."
+    },
+    {
+        "id": "matsuba",
+        "nameJp": "松葉色",
+        "nameEn": "Pine Needle",
+        "reading": "Matsuba-iro",
+        "hex": "#42602D",
+        "category": "Winter",
+        "description": "A dark, deep green resembling the needles of a pine tree. A symbol of longevity and endurance against the cold winter."
+    },
+    {
+        "id": "kurenai",
+        "nameJp": "紅",
+        "nameEn": "Crimson",
+        "reading": "Kurenai",
+        "hex": "#CB1B45",
+        "category": "Winter",
+        "description": "A vivid red dyed from safflowers. It pops beautifully against the white snow, making it a symbolic color of winter cosmetics and clothing."
+    },
+    {
+        "id": "kori",
+        "nameJp": "氷色",
+        "nameEn": "Ice White",
+        "reading": "Kori-iro",
+        "hex": "#E0EEF6",
+        "category": "Winter",
+        "description": "A very pale blue, almost white, resembling ice. It represents the cold, crisp air of winter."
+    },
+    {
+        "id": "ginnezumi",
+        "nameJp": "銀鼠",
+        "nameEn": "Silver Gray",
+        "reading": "Ginnezumi",
+        "hex": "#AFAFB0",
+        "category": "Winter",
+        "description": "A light gray with a silver tint. During the Edo period, strictly regulated commoners created '48 shades of brown and gray' to enjoy fashion within the rules."
+    },
+    {
+        "id": "sumi",
+        "nameJp": "墨色",
+        "nameEn": "Ink Black",
+        "reading": "Sumi-iro",
+        "hex": "#595857",
+        "category": "Winter",
+        "description": "A dark gray resembling the color of calligraphy ink. It is lighter than pure black and has nuances of shading."
+    },
+    {
+        "id": "tetsukon",
+        "nameJp": "鉄紺",
+        "nameEn": "Iron Navy",
+        "reading": "Tetsukon",
+        "hex": "#17184B",
+        "category": "Winter",
+        "description": "A very dark, slightly greenish navy blue. It signifies strength and durability, often favored by warriors."
+    },
+    {
+        "id": "go",
+        "nameJp": "海松色",
+        "nameEn": "Sea Pine",
+        "reading": "Miru-iro",
+        "hex": "#726D40",
+        "category": "Winter",
+        "description": "A deep brownish-green resembling 'Miru' (sea pine) seaweed. It is a subdued, classic color appreciated by tea masters and poets."
+    },
+    {
+        "id": "shu",
+        "nameJp": "朱色",
+        "nameEn": "Vermilion",
+        "reading": "Shu-iro",
+        "hex": "#BA2636",
+        "category": "Universal",
+        "description": "A vivid yellowish-red. Traditionally made from cinnabar, it is used in Shinto shrine gates (Torii) to ward off evil."
+    },
+    {
+        "id": "gunjo",
+        "nameJp": "群青色",
+        "nameEn": "Ultramarine",
+        "reading": "Gunjo-iro",
+        "hex": "#4C6CB3",
+        "category": "Universal",
+        "description": "A deep, vivid blue pigment made from azurite. It has been used in Japanese paintings to depict the ocean or the sky."
+    },
+    {
+        "id": "edoshare",
+        "nameJp": "江戸紫",
+        "nameEn": "Edo Purple",
+        "reading": "Edo-murasaki",
+        "hex": "#745399",
+        "category": "Universal",
+        "description": "A stylish, bluish-purple beloved by the people of Edo (old Tokyo). It represents the 'Iki' (chic) aesthetic of the Kabuki theater culture."
+    },
+    {
+        "id": "suou",
+        "nameJp": "蘇芳",
+        "nameEn": "Sappanwood Red",
+        "reading": "Suou",
+        "hex": "#9E3D3F",
+        "category": "Universal",
+        "description": "A dark, dull red derived from sappanwood. In the ancient court hierarchy, it was a prestigious color worn by high-ranking officials."
+    },
+    {
+        "id": "azuki",
+        "nameJp": "小豆色",
+        "nameEn": "Red Bean",
+        "reading": "Azuki-iro",
+        "hex": "#96514D",
+        "category": "Universal",
+        "description": "A reddish-brown color resembling red beans (Azuki). Red beans are believed to bring good luck and are eaten on celebratory occasions."
+    },
+    {
+        "id": "rikyunezumi",
+        "nameJp": "利休鼠",
+        "nameEn": "Rikyu Gray",
+        "reading": "Rikyu-nezumi",
+        "hex": "#888E7E",
+        "category": "Universal",
+        "description": "A greenish-gray named after Sen no Rikyu. It is a subtle, sophisticated color that embodies the tea ceremony aesthetic."
     },
     {
         "id": "gofun",
@@ -131,7 +419,7 @@
         "nameEn": "Oyster White",
         "reading": "Gofun",
         "hex": "#FFFFFB",
-        "category": "White",
+        "category": "Universal",
         "description": "A warm white pigment made from crushed oyster shells, traditionally used for the skin of Japanese Hina dolls."
     },
     {
@@ -140,16 +428,25 @@
         "nameEn": "Lacquer Black",
         "reading": "Shikkoku",
         "hex": "#0D0015",
-        "category": "Black",
+        "category": "Universal",
         "description": "A pure, glossy black resembling wet lacquerware. It represents infinite depth and silence."
     },
     {
-        "id": "toki",
-        "nameJp": "鴇色",
-        "nameEn": "Ibis Pink",
-        "reading": "Toki-iro",
-        "hex": "#F4B3C2",
-        "category": "Pink",
-        "description": "A soft pinkish-orange, the color of the Japanese Crested Ibis's feathers. A gentle color often seen in kimono patterns."
+        "id": "kon",
+        "nameJp": "紺色",
+        "nameEn": "Navy Blue",
+        "reading": "Kon-iro",
+        "hex": "#223a70",
+        "category": "Universal",
+        "description": "A classic deep blue dyed with indigo. It has been the most common color for Japanese clothing for centuries, representing reliability."
+    },
+    {
+        "id": "ogon",
+        "nameJp": "黄金",
+        "nameEn": "Gold",
+        "reading": "Ogon",
+        "hex": "#e6b422",
+        "category": "Universal",
+        "description": "The color of gold, symbolizing wealth, divinity, and the harvest. Used extensively in Buddhist art and lacquerware."
     }
 ]

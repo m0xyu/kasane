@@ -19,17 +19,28 @@ const colorList: TraditionalColor[] = colors;
 
     <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
-            colorList.map((color) => (
+            colorList.slice(0, 12).map((color) => (
                 <div class='group relative bg-white border border-stone-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden'>
                     <ColorCard color={color} />
                 </div>
             ))
         }
     </div>
-</main>
+    <div class='text-center mt-12'>
+        <a
+            href='/colors'
+            class='group inline-flex items-center gap-2 p-3 font-medium text-stone-500 hover:text-stone-700 transition-colors'
+        >
+            View All Traditional Colors
+            <ArrowRightIcon
+                className='w-4 h-4 transition-transform group-hover:translate-x-1'
+            />
+        </a>
+    </div>
 
-<style>
-    .writing-vertical-rl {
-        writing-mode: vertical-rl;
-    }
-</style>
+    <style>
+        .writing-vertical-rl {
+            writing-mode: vertical-rl;
+        }
+    </style>
+</main>
