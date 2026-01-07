@@ -114,14 +114,16 @@ export const useHorizonLogic = () => {
     }, [brandColor, bgColor]);
 
     const jsonOutput = useMemo(() => {
-        const output = {
-            color_schemes: {
-                'scheme-kasane-custom': {
-                    settings: settings,
-                },
-            },
+        const schemeData = {
+            settings: settings,
         };
-        return JSON.stringify(output, null, 2);
+
+        const output = {
+            'scheme-kasane-custom': schemeData,
+        };
+
+        const jsonString = JSON.stringify(output, null, 2);
+        return jsonString.substring(1, jsonString.length - 1).trim();
     }, [settings]);
 
     return {

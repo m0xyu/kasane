@@ -21,6 +21,12 @@ const {
         <meta name='description' content={description} />
     </head>
     <body class='bg-[#fcfaf2] text-slate-800'>
+        {/* Background Noise */}
+        <div
+            class='fixed inset-0 opacity-[0.03] pointer-events-none z-50'
+            style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"
+        >
+        </div>
         <AppNav />
         <slot />
         <Footer />
