@@ -1,7 +1,7 @@
 // src/components/common/HeaderMenu.tsx
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { dropdownItems } from '../../data/dropdownItems';
-import { Home, Info, MenuIcon, Palette, X } from 'lucide-react';
+import { MenuIcon, X } from 'lucide-react';
 
 const MobileMenu = () => {
     return (

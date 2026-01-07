@@ -1,9 +1,9 @@
 // src/components/tools/ShopifyColorGenerator/index.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { useHorizonLogic } from './useHorizonLogic';
 import { Preview } from './Preview';
-import { Copy, Check, Shuffle, RefreshCcw } from 'lucide-react';
+import { Copy, Check, Shuffle } from 'lucide-react';
 import colorsData from '../../../data/colors.json';
 
 export default function ShopifyColorGenerator() {

@@ -4,12 +4,18 @@ const {
     mainTitle = 'KASANE - 襲',
     subTitle = 'Japanese Traditional Color Palette - Explore and utilize a beautiful collection of Japanese traditional colors for your design projects.',
 } = Astro.props;
+
+const formattedTitle = mainTitle.replace(
+    /襲/g,
+    '<span class="font-serif">襲</span>'
+);
 ---
 
 <div class='mb-16 text-center'>
-    <h1 class='text-4xl md:text-6xl font-bold mb-4 tracking-widest'>
-        {mainTitle}
-    </h1>
+    <h1
+        class='text-4xl md:text-6xl font-bold mb-4 tracking-widest'
+        set:html={formattedTitle}
+    />
     <p
         class:list={[
             'text-slate-500 text-base md:text-lg leading-relaxed tracking-normal',
