@@ -2,7 +2,10 @@
 
 **KASANE (襲)** は、日本の伝統色（Traditional Colors of Japan）を現代の Web デザインや開発ワークフローにシームレスに統合するための、デザイナー・開発者向けツールキットです。
 
-四季折々の色彩の美しさを、「見る」だけでなく「使う」ための実用的なジェネレーター機能を提供します。
+> **Note**
+> 本プロジェクトは海外のデザイナー・開発者をターゲットとしているため、アプリケーションの UI およびコンテンツは全て**英語**で作成されています。
+
+四季折々の色彩の美しさを、「見る」だけでなく「使う」ための実用的なジェネレーター機能を提供します。 すべての処理はクライアントサイド（ブラウザ上）で完結するため、入力データが外部サーバーに送信されることはありません。
 
 ## 🚀 Key Features
 
@@ -16,7 +19,7 @@
 
 -   **Shopify Color Generator:**
 
-    -   ブランドカラーと背景色を選ぶだけで、Shopify (Dawn/Horizon) テーマ用の `settings_data.json` を自動生成。
+    -   ブランドカラーと背景色を選ぶだけで、Shopify (Horizon) テーマ用の `color_schemes` を自動生成。
     -   アクセシビリティ（WCAG）に基づいたコントラスト自動計算、ボタン反転ロジック、OKLCH ベースの配色調整を搭載。
 
 -   **Tailwind Palette Generator:**
@@ -38,7 +41,7 @@
 ## 🛠️ Tech Stack
 
 -   **Framework:** Astro (v5)
--   **UI Library:** React
+-   **UI Library:** React / Radix UI
 -   **Styling:** Tailwind CSS
 -   **Color Manipulation:** chroma.js / react-colorful
 -   **Icons:** Lucide React

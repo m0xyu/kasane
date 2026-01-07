@@ -50,7 +50,7 @@ export const PreviewPanel = ({
                     type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    className="w-full text-center bg-transparent border-none focus:outline-none text-5xl md:text-8xl font-black tracking-tighter"
+                    className="w-full text-center caret-stone-700 bg-transparent focus:outline-none text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter transform duration-300"
                     style={textStyle}
                     placeholder="Type here..."
                 />
