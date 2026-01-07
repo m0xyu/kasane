@@ -4,8 +4,8 @@ import AppNav from '../components/common/AppNav.astro';
 import Footer from '../components/common/Footer.astro';
 import Toast from '../components/common/Toast.astro';
 
-const GA_ID = import.meta.env.PUBLIC_GA_ID;
-const APP_URL = import.meta.env.PUBLIC_APP_URL;
+const GA_ID: string = import.meta.env.PUBLIC_GA_ID;
+const APP_URL: string = import.meta.env.PUBLIC_APP_URL;
 const {
     title = 'KASANE - 襲',
     description = 'Japanese Traditional Color Palette - Explore and utilize a beautiful collection of Japanese traditional colors for your design projects.',
@@ -46,19 +46,21 @@ const {
 
         {
             GA_ID && (
+                <>
                 <script
                         is:inline
                         type="text/partytown"
-                        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                        async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
                     />
-                    <script is:inline type="text/partytown">
+                    <script is:inline type="text/partytown" define:vars={{ GA_ID }}>
                         window.dataLayer = window.dataLayer || [];
                         function gtag() {
                             dataLayer.push(arguments);
                         }
                         gtag('js', new Date());
-                        gtag('config', {GA_ID});
+                        gtag('config', GA_ID);
                     </script>
+                </>
             )
         }
     </head>
