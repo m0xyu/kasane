@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/common/Header.astro';
+import MainHeader from '../components/common/MainHeader.astro';
 import ColorCard from '../components/ColorCard.astro';
 import colors from '../data/colors.json';
 import type { TraditionalColor } from '../types/color';
@@ -22,7 +22,7 @@ const colorList: TraditionalColor[] = colors;
 
     <div class='flex flex-col min-h-screen'>
         <main class='flex-1 max-w-7xl mx-auto px-6 py-12 md:py-20 w-full'>
-            <Header
+            <MainHeader
                 mainTitle='Traditional Colors'
                 subTitle='The Collection of Japanese Colors'
                 isDescription={true}

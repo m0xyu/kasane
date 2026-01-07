@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Index from '../../components/tools/TailwindPalette/index';
-import Header from '../../components/common/Header.astro';
+import MainHeader from '../../components/common/MainHeader.astro';
 ---
 
 <Layout
@@ -9,7 +9,7 @@ import Header from '../../components/common/Header.astro';
     description='Generate a complete Tailwind CSS color palette (50-950) from a single Japanese traditional color. Preview on UI components and export configuration code instantly.'
 >
     <main class='max-w-7xl mx-auto px-6 py-12 md:py-20'>
-        <Header
+        <MainHeader
             mainTitle='Tailwind Palette Generator'
             subTitle='Bridge tradition and utility.<br/>Generate a full Tailwind CSS color scale from any traditional Japanese color.'
             isDescription={true}

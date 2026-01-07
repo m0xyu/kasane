@@ -1,82 +1,19 @@
 ---
 // src/components/common/AppNav.astro
 import Logo from '../AppLogo.astro';
-import DropDownMenu from '../DropDownMenu.astro';
-
-import {
-    Type, // Text Gradient 用
-    Image, // Background 用
-    Palette, // Palette 用
-    Layers, // Multi-Color 用
-    Wind, // Tailwind 用
-    ShoppingBag,
-} from 'lucide-react';
-
-const dropdownItems = [
-    {
-        icon: Type, // アイコン例
-        label: 'Text Gradient Generator',
-        desc: 'Generate beautiful text gradients',
-        url: '/tools/text-gradient-generator',
-    },
-    {
-        icon: Palette,
-        label: 'Multi-Color Palette',
-        desc: 'Japanese multi-color palette',
-        url: '/tools/multi-color-palette',
-    },
-    {
-        icon: Image,
-        label: 'Wagara Generator',
-        desc: 'Generate stunning wagara patterns',
-        url: '/tools/wagara-generator',
-    },
-    {
-        icon: Wind,
-        label: 'Tailwind Palette',
-        desc: 'Tailwind CSS color palettes',
-        url: '/tools/tailwind-palette-generator',
-    },
-    {
-        icon: ShoppingBag,
-        label: 'Shopify Palette',
-        desc: 'Shopify Horizon color schemes',
-        url: '/tools/shopify-color-generator',
-    },
-];
+import MobileMenu from './MobileMenu';
+import HeaderMenu from './HeaderMenu';
 ---
 
-<div
+<header
     class='w-full bg-[#fcfaf2]/90 backdrop-blur-sm sticky top-0 z-40 border-b border-stone-100'
 >
     <div class='max-w-7xl mx-auto flex items-center justify-between md:p-6 p-4'>
         <Logo />
         <nav class='hidden md:block h-full'>
             <ul class='flex justify-center gap-8 text-sm tracking-widest'>
-                <li class='relative group h-full'>
-                    <button
-                        id='mega-menu-dropdown-button'
-                        class='flex items-center gap-1 hover:text-stone-500 focus:outline-none'
-                    >
-                        Tools
-                        <svg
-                            class='w-4 h-4 transition-transform group-hover:rotate-180'
-                            fill='none'
-                            stroke='currentColor'
-                            viewBox='0 0 24 24'
-                            ><path
-                                stroke-linecap='round'
-                                stroke-linejoin='round'
-                                stroke-width='2'
-                                d='M19 9l-7 7-7-7'></path></svg
-                        >
-                    </button>
-
-                    <div
-                        class='hidden group-hover:block absolute top-full right-0 min-w-[320px] z-50 pt-4'
-                    >
-                        <DropDownMenu items={dropdownItems} />
-                    </div>
+                <li>
+                    <HeaderMenu client:load />
                 </li>
                 <li><a href='/'>Home</a></li>
                 <li><a href='/colors'>Colors</a></li>
@@ -89,87 +26,8 @@ const dropdownItems = [
                 </li> -->
             </ul>
         </nav>
-        <button
-            id='mobile-menu-btn'
-            class='md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none'
-        >
-            <svg
-                class='w-6 h-6'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-            >
-                <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
-                    d='M4 6h16M4 12h16M4 18h16'></path>
-            </svg>
-        </button>
+        <div class='md:hidden'>
+            <MobileMenu client:load />
+        </div>
     </div>
-    <div
-        id='mobile-menu'
-        class='hidden md:hidden border-t border-stone-100 bg-[#fcfaf2] absolute w-full left-0 buttom-0 shadow-lg'
-    >
-        <ul class='flex flex-col p-4 gap-4 text-sm font-medium text-slate-600'>
-            <li class='border-b border-stone-100 pt-4'>
-                <span
-                    class='block mb-2 text-xs text-stone-400 uppercase tracking-widest'
-                    >Tools</span
-                >
-                <div class='grid grid-cols-1 gap-2 pl-2'>
-                    {
-                        dropdownItems.map((item) => (
-                            <a
-                                href={item.url}
-                                class='flex py-2 text-slate-700 hover:text-slate-900 items-center gap-3'
-                            >
-                                <span class='w-8 h-8 bg-stone-100 rounded-full flex items-center justify-center text-xs'>
-                                    <item.icon className='w-4 h-4' />
-                                </span>
-                                {item.label}
-                            </a>
-                        ))
-                    }
-                </div>
-            </li>
-            <li>
-                <a
-                    href='/'
-                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3 border-b'
-                    >Home</a
-                >
-            </li>
-            <li>
-                <a
-                    href='/colors'
-                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3 border-b'
-                    >Colors</a
-                >
-            </li>
-            <li>
-                <a
-                    href='/about'
-                    class='block hover:text-slate-900 border-stone-200 pb-4 pt-1 px-3'
-                    >About</a
-                >
-            </li>
-            <!-- <li class='border-t border-stone-100 pt-4'>
-                <a href='/login' class='block py-2 hover:text-slate-900'
-                    >Login</a
-                >
-            </li> -->
-        </ul>
-
-        <script>
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        </script>
-    </div>
-</div>
+</header>

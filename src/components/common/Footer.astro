@@ -1,16 +1,8 @@
 ---
 import Logo from '../AppLogo.astro';
+import { dropdownItems } from '../../data/dropdownItems';
 
 const currentYear = new Date().getFullYear();
-
-// ツールリンク群
-const toolsLinks = [
-    { label: 'Text Gradient', url: '/tools/text-gradient-generator' },
-    { label: 'Multi Color Palette', url: '/tools/multi-color-palette' },
-    { label: 'Wagara Generator', url: '/tools/wagara-generator' },
-    { label: 'Tailwind Scheme', url: '/tools/tailwind-palette-generator' },
-    { label: 'Shopify Scheme', url: '/tools/shopify-color-generator' },
-];
 
 // その他のリンク
 const aboutLinks = [
@@ -67,13 +59,13 @@ const aboutLinks = [
                     </h3>
                     <ul class='space-y-3'>
                         {
-                            toolsLinks.map((link) => (
+                            dropdownItems.map(({ url, label }) => (
                                 <li>
                                     <a
-                                        href={link.url}
+                                        href={url}
                                         class='text-stone-500 hover:text-slate-900 transition-colors'
                                     >
-                                        {link.label}
+                                        {label}
                                     </a>
                                 </li>
                             ))
