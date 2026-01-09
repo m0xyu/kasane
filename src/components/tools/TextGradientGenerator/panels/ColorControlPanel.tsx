@@ -9,6 +9,7 @@ interface Props {
     onRemove: (index: number) => void;
     onUpdate: (index: number, color: string) => void;
     onRandomize: () => void;
+    setColors: (colors: string[]) => void;
 }
 
 export const ColorControlPanel = ({
@@ -17,6 +18,7 @@ export const ColorControlPanel = ({
     onRemove,
     onUpdate,
     onRandomize,
+    setColors,
 }: Props) => {
     const [activeColorIndex, setActiveColorIndex] = useState<number | null>(
         null
@@ -53,7 +55,29 @@ export const ColorControlPanel = ({
                 {colors.map((color, index) => (
                     <div
                         key={index}
-                        className="flex items-center gap-2 group relative color-picker-wrapper"
+                        className="flex bg-transparent items-center gap-2 group relative color-picker-wrapper"
+                        draggable="true"
+                        onDragStart={(e) => {
+                            e.dataTransfer?.setData('index', index.toString());
+                        }}
+                        onDragOver={(e) => {
+                            e.preventDefault();
+                        }}
+                        onDrop={(e) => {
+                            e.preventDefault();
+                            // ドラッグ元とドラッグ先のインデックスを取得
+                            const fromIndex = Number(
+                                e.dataTransfer?.getData('index')
+                            );
+                            const toIndex = index;
+                            if (fromIndex === toIndex) return;
+                            const newColors = [...colors];
+                            // ドラッグ元の色を取り出す
+                            const [movedColor] = newColors.splice(fromIndex, 1);
+                            // ドラッグ先に挿入
+                            newColors.splice(toIndex, 0, movedColor);
+                            setColors(newColors);
+                        }}
                     >
                         <GripVertical className="w-4 h-4 text-stone-400 cursor-move" />
 
@@ -87,7 +111,7 @@ export const ColorControlPanel = ({
                             type="text"
                             value={color}
                             onChange={(e) => onUpdate(index, e.target.value)}
-                            className="flex-1 text-sm font-mono border border-stone-200 rounded px-2 py-1.5 focus:outline-none focus:border-slate-400 uppercase"
+                            className="text-sm flex-1 min-w-0 font-mono border border-stone-200 rounded px-2 py-1.5 focus:outline-none focus:border-slate-400 uppercase"
                         />
 
                         {/* Remove Button */}

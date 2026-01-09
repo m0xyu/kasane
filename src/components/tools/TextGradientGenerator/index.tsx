@@ -16,6 +16,7 @@ export default function TextGradientGenerator() {
                 onRemove={actions.removeColor}
                 onUpdate={actions.updateColor}
                 onRandomize={actions.randomize}
+                setColors={actions.setColors}
             />
 
             {/* 中央：プレビュー */}
