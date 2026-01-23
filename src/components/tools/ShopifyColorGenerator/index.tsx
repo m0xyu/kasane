@@ -26,7 +26,7 @@ export default function ShopifyColorGenerator() {
         window.dispatchEvent(
             new CustomEvent('toast', {
                 detail: { message: 'Scheme JSON copied!', type: 'success' },
-            })
+            }),
         );
     };
 
@@ -62,6 +62,12 @@ export default function ShopifyColorGenerator() {
                                 color={brandColor}
                                 onChange={setBrandColor}
                                 style={{ width: '100%', height: '100px' }}
+                            />
+                            <input
+                                type="text"
+                                value={brandColor}
+                                onChange={(e) => setBrandColor(e.target.value)}
+                                className="text-sm min-w-0 w-full font-mono border border-stone-200 rounded px-2 py-1.5 mt-3.5 focus:border-slate-400 uppercase"
                             />
                         </div>
                     </div>

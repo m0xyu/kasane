@@ -8,18 +8,18 @@ export const useHorizonLogic = () => {
     // 1. ブランドカラー (Primary)
     const [brandColor, setBrandColor] = useLocalStorage<string>(
         'kasane-horizon-brand',
-        '#DC9FB4'
+        '#DC9FB4',
     );
 
     // 2. 背景色 (Background) - 自由設定可能に
     const [bgColor, setBgColor] = useLocalStorage<string>(
         'kasane-horizon-bg',
-        '#FFFFFF'
+        '#FFFFFF',
     );
 
     const settings: HorizonSettings = useMemo(() => {
-        const primary = brandColor;
-        const bg = bgColor;
+        const primary = chroma.valid(brandColor) ? brandColor : '#DC9FB4';
+        const bg = chroma.valid(bgColor) ? bgColor : '#FFFFFF';
 
         // 背景の明るさを判定 (4.5以上なら暗い背景とみなす)
         const isDarkBg = chroma.contrast(bg, '#FFFFFF') > 4.5;
@@ -35,8 +35,8 @@ export const useHorizonLogic = () => {
             chroma.contrast(bg, rawFg) >= 4.5
                 ? rawFg
                 : isDarkBg
-                ? '#FFFFFF'
-                : '#121212';
+                  ? '#FFFFFF'
+                  : '#121212';
 
         const fgHeading = fg;
 
