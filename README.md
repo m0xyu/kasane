@@ -2,6 +2,8 @@
 
 **KASANE (襲)** は、日本の伝統色（Traditional Colors of Japan）を現代の Web デザインや開発ワークフローにシームレスに統合するための、デザイナー・開発者向けツールキットです。
 
+[https://kasane-palette.dev/](https://kasane-palette.dev/)
+
 > **Note**
 > 本プロジェクトは海外のデザイナー・開発者をターゲットとしているため、アプリケーションの UI およびコンテンツは全て**英語**で作成されています。
 
